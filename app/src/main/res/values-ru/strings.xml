@@ -14,4 +14,7 @@
     <string name="communicate">Общение</string>
     <string name="share">Поделиться</string>
     <string name="send">Написать</string>
+
+    <string name="email">omtaxi@mail.ru</string>
+
 </resources>
