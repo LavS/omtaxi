@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">OM Taxi</string>
+
+    <string name="navigation_drawer_open">Открыть навигационную панель</string>
+    <string name="navigation_drawer_close">Закрыть навигационную панель</string>
+
+    <string name="action_settings">Настройки</string>
+
+    <string name="online">Подключение онлайн</string>
+    <string name="instructions">Полезные интрукции</string>
+    <string name="conditions">Условия работы</string>
+    <string name="contacts">Контакты</string>
+
+    <string name="communicate">Общение</string>
+    <string name="share">Поделиться</string>
+    <string name="send">Написать</string>
+</resources>
