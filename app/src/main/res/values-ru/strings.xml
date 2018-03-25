@@ -1,21 +1,22 @@
 <resources>
     <string name="app_name">OM Taxi</string>
+    <string name="email">omtaxi@mail.ru</string>
+    <string name="partner">Официальный партнер</string>
 
-    <string name="navigation_drawer_open">Открыть навигационную панель</string>
-    <string name="navigation_drawer_close">Закрыть навигационную панель</string>
-
-    <string name="action_settings">Настройки</string>
-
+    <!-- Боковое меню -->
     <string name="online">Подключение онлайн</string>
     <string name="instructions">Полезные интрукции</string>
     <string name="conditions">Условия работы</string>
     <string name="contacts">Контакты</string>
-
     <string name="communicate">Общение</string>
     <string name="share">Поделиться</string>
     <string name="send">Написать</string>
 
-    <string name="email">omtaxi@mail.ru</string>
-    <string name="partner">Официальный партнер</string>
+    <!-- Инструкции -->
+    <string name="install">Установка таксометра</string>
+    <string name="photocontrol">Фотоконтроль</string>
+    <string name="firsttrip">Первая поездка</string>
+    <string name="noorders">Заказы не поступают?</string>
+    <string name="faq">Частые вопросы</string>
 
 </resources>

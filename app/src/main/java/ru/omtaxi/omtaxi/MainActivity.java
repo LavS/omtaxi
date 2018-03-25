@@ -1,5 +1,7 @@
 package ru.omtaxi.omtaxi;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -23,7 +25,7 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, drawer, toolbar, 0, 0);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -75,6 +77,8 @@ public class MainActivity extends AppCompatActivity
     public void OnClick(View item)
     {
         int id = item.getId();
+
+        // Main activity
         if (id == R.id.btn_online) {
             Toast.makeText(item.getContext(), "@string/online", Toast.LENGTH_LONG);
 
@@ -86,6 +90,33 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.btn_contacts) {
             Toast.makeText(item.getContext(), "@string/contacts", Toast.LENGTH_LONG);
+
+        // Instructions
+        } else if (id == R.id.btn_install) {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("https://play.google.com/store/apps/details?id=ru.yandex.taximeter"));
+            startActivity(browserIntent);
+
+        } else if (id == R.id.btn_photocontrol) {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("https://driver.yandex/photocontrol/"));
+            startActivity(browserIntent);
+
+        } else if (id == R.id.btn_firsttrip) {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("https://driver.yandex/урок-№1/"));
+            startActivity(browserIntent);
+
+        } else if (id == R.id.btn_noorders) {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("https://driver.yandex/block-new/"));
+            startActivity(browserIntent);
+
+        } else if (id == R.id.btn_faq) {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("https://driver.yandex/новичку/"));
+            startActivity(browserIntent);
         }
+
     }
 }
