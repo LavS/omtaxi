@@ -15,32 +15,6 @@
     tools:context="ru.omtaxi.omtaxi.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-        <ImageView
-            android:id="@+id/img_taxi"
-            android:layout_width="match_parent"
-            android:layout_height="240dp"
-            android:contentDescription="@string/app_name"
-            app:srcCompat="@drawable/taxi" />
-
-        <TextView
-            android:id="@+id/txtName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textAlignment="center"
-            android:textColor="@color/colorAccent"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/txtPartner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/partner"
-            android:textAlignment="center"
-            android:textColor="@color/colorAccent"
-            android:textSize="18sp" />
-
         <Button
             android:id="@+id/btn_online"
             android:layout_width="match_parent"
