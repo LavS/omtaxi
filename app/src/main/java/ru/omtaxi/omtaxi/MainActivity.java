@@ -1,5 +1,6 @@
 package ru.omtaxi.omtaxi;
 
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,6 +16,13 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    FragmentMain f_main;
+    FragmentConditions f_conditions;
+    FragmentContacts f_contacts;
+    FragmentInstructions f_instructions;
+    FragmentRegistration f_registration;
+    FragmentTransaction f_trans;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +40,16 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemIconTintList(null);
+
+        f_main = new FragmentMain();
+        f_conditions = new FragmentConditions();
+        f_contacts = new FragmentContacts();
+        f_instructions = new FragmentInstructions();
+        f_registration = new FragmentRegistration();
+
+        f_trans = getFragmentManager().beginTransaction();
+        f_trans.add(R.id.inc_fragment, f_main);
+        f_trans.commit();
     }
 
     @Override
@@ -50,18 +68,19 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        f_trans = getFragmentManager().beginTransaction();
 
         if (id == R.id.nav_online) {
-            Toast.makeText(drawer.getContext(), "@string/online", Toast.LENGTH_LONG);
+            f_trans.replace(R.id.inc_fragment, f_registration);
 
         } else if (id == R.id.nav_instructions) {
-            Toast.makeText(drawer.getContext(), "@string/instructions", Toast.LENGTH_LONG);
+            f_trans.replace(R.id.inc_fragment, f_instructions);
 
         } else if (id == R.id.nav_conditions) {
-            Toast.makeText(drawer.getContext(), "@string/conditions", Toast.LENGTH_LONG);
+            f_trans.replace(R.id.inc_fragment, f_conditions);
 
         } else if (id == R.id.nav_contacts) {
-            Toast.makeText(drawer.getContext(), "@string/contacts", Toast.LENGTH_LONG);
+            f_trans.replace(R.id.inc_fragment, f_contacts);
 
         } else if (id == R.id.nav_share) {
             Toast.makeText(drawer.getContext(), "@string/share", Toast.LENGTH_LONG);
@@ -70,6 +89,8 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(drawer.getContext(), "@string/send", Toast.LENGTH_LONG);
         }
 
+        f_trans.addToBackStack(null);
+        f_trans.commit();
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
@@ -77,19 +98,20 @@ public class MainActivity extends AppCompatActivity
     public void OnClick(View item)
     {
         int id = item.getId();
+        f_trans = getFragmentManager().beginTransaction();
 
         // Main activity
         if (id == R.id.btn_online) {
-            Toast.makeText(item.getContext(), "@string/online", Toast.LENGTH_LONG);
+            f_trans.replace(R.id.inc_fragment, f_registration);
 
         } else if (id == R.id.btn_instructions) {
-            Toast.makeText(item.getContext(), "@string/instructions", Toast.LENGTH_LONG);
+            f_trans.replace(R.id.inc_fragment, f_instructions);
 
         } else if (id == R.id.btn_conditions) {
-            Toast.makeText(item.getContext(), "@string/conditions", Toast.LENGTH_LONG);
+            f_trans.replace(R.id.inc_fragment, f_conditions);
 
         } else if (id == R.id.btn_contacts) {
-            Toast.makeText(item.getContext(), "@string/contacts", Toast.LENGTH_LONG);
+            f_trans.replace(R.id.inc_fragment, f_contacts);
 
         // Instructions
         } else if (id == R.id.btn_install) {
@@ -118,5 +140,7 @@ public class MainActivity extends AppCompatActivity
             startActivity(browserIntent);
         }
 
+        f_trans.addToBackStack(null);
+        f_trans.commit();
     }
 }
