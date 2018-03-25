@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="240dp"
         android:contentDescription="@string/app_name"
-        app:srcCompat="@mipmap/taxi" />
+        app:srcCompat="@drawable/taxi" />
 
     <TextView
         android:id="@+id/txtName"
