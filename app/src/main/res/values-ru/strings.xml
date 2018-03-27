@@ -9,7 +9,7 @@
     <string name="partner">Официальный партнер</string>
 
     <!-- Боковое меню -->
-    <string name="online">Подключение онлайн</string>
+    <string name="registration">Подключение онлайн</string>
     <string name="instructions">Полезные интрукции</string>
     <string name="conditions">Условия работы</string>
     <string name="contacts">Контакты</string>

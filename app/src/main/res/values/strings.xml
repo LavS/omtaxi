@@ -9,7 +9,7 @@
     <string name="partner">Official Partner</string>
 
     <!-- Sidebar menu -->
-    <string name="online">Registration online</string>
+    <string name="registration">Registration online</string>
     <string name="instructions">Useful instructions</string>
     <string name="conditions">Working conditions</string>
     <string name="contacts">Contacts</string>

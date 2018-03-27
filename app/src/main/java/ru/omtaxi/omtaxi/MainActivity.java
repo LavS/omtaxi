@@ -4,7 +4,6 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -13,7 +12,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -71,7 +69,7 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         f_trans = getFragmentManager().beginTransaction();
 
-        if (id == R.id.nav_online) {
+        if (id == R.id.nav_registration) {
             f_trans.replace(R.id.inc_fragment, f_registration);
 
         } else if (id == R.id.nav_instructions) {
@@ -110,7 +108,7 @@ public class MainActivity extends AppCompatActivity
         f_trans = getFragmentManager().beginTransaction();
 
         // Main activity
-        if (id == R.id.btn_online) {
+        if (id == R.id.btn_registration) {
             f_trans.replace(R.id.inc_fragment, f_registration);
 
         } else if (id == R.id.btn_instructions) {
