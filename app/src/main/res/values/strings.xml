@@ -1,6 +1,11 @@
 <resources>
-    <string name="app_name">OM Taxi</string>
+
+    <!-- URLs - only english -->
     <string name="email">omtaxi@mail.ru</string>
+    <string name="link">https://play.google.com/store/apps/details?id=ru.yandex.taxi</string>
+
+    <!-- Common strings -->
+    <string name="app_name">OM Taxi</string>
     <string name="partner">Official Partner</string>
 
     <!-- Sidebar menu -->

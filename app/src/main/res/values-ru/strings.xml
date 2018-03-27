@@ -1,6 +1,11 @@
 <resources>
+
+    <!-- Ссылки - только английский -->
+    <!--string name="email" -->
+    <!--string name="link" -->
+
+    <!-- Общие строки-->
     <string name="app_name">OM Taxi</string>
-    <string name="email">omtaxi@mail.ru</string>
     <string name="partner">Официальный партнер</string>
 
     <!-- Боковое меню -->

@@ -4,6 +4,7 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -83,10 +84,18 @@ public class MainActivity extends AppCompatActivity
             f_trans.replace(R.id.inc_fragment, f_contacts);
 
         } else if (id == R.id.nav_share) {
-            Toast.makeText(drawer.getContext(), "@string/share", Toast.LENGTH_LONG);
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.setType("text/plain");
+            sendIntent.putExtra(Intent.EXTRA_TEXT, getResources().getText(R.string.link));
+            startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.share)));
 
         } else if (id == R.id.nav_send) {
-            Toast.makeText(drawer.getContext(), "@string/send", Toast.LENGTH_LONG);
+            Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+            emailIntent.setType("plain/text");
+            emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL,
+                    new String[] {(String) getResources().getText(R.string.email)});
+            startActivity(Intent.createChooser(emailIntent,getResources().getText(R.string.send)));
         }
 
         f_trans.addToBackStack(null);
