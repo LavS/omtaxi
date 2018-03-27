@@ -3,4 +3,108 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:id="@+id/lt_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edt_fio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/fio" />
+
+        <EditText
+            android:id="@+id/edt_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="phone"
+            android:text="@string/phone" />
+
+        <EditText
+            android:id="@+id/edt_rights"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:text="@string/rights" />
+
+        <EditText
+            android:id="@+id/edt_begin_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="date"
+            android:text="@string/begin_date" />
+
+        <EditText
+            android:id="@+id/edt_end_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="date"
+            android:text="@string/end_date" />
+
+        <EditText
+            android:id="@+id/edt_car_brand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/car_brand" />
+
+        <EditText
+            android:id="@+id/edt_car_model"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/car_model" />
+
+        <EditText
+            android:id="@+id/edt_car_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/car_color" />
+
+        <EditText
+            android:id="@+id/edt_car_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/car_number" />
+
+        <EditText
+            android:id="@+id/edt_license"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:text="@string/license" />
+
+        <CheckBox
+            android:id="@+id/chk_processing_yandex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/processing_yandex" />
+
+        <CheckBox
+            android:id="@+id/chk_processing_contract"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/processing_contract" />
+
+        <Button
+            android:id="@+id/btn_begin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/begin" />
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

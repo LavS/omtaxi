@@ -85,14 +85,14 @@ public class MainActivity extends AppCompatActivity
             Intent sendIntent = new Intent();
             sendIntent.setAction(Intent.ACTION_SEND);
             sendIntent.setType("text/plain");
-            sendIntent.putExtra(Intent.EXTRA_TEXT, getResources().getText(R.string.link));
+            sendIntent.putExtra(Intent.EXTRA_TEXT, getResources().getText(R.string.omtaxi_share));
             startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.share)));
 
         } else if (id == R.id.nav_send) {
             Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
             emailIntent.setType("plain/text");
             emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL,
-                    new String[] {(String) getResources().getText(R.string.email)});
+                    new String[] {(String) getResources().getText(R.string.omtaxi_email)});
             startActivity(Intent.createChooser(emailIntent,getResources().getText(R.string.send)));
         }
 

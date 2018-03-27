@@ -1,8 +1,9 @@
 <resources>
 
     <!-- Ссылки - только английский -->
-    <!--string name="email" -->
-    <!--string name="link" -->
+    <!--string name="omtaxi_email" -->
+    <!--string name="omtaxi_phone" -->
+    <!--string name="omtaxi_share" -->
 
     <!-- Общие строки-->
     <string name="app_name">OM Taxi</string>
@@ -41,5 +42,27 @@
     » Удобная навигация\n
     » Бонусы от партнеров (еда, топливо, мойка, мобильная связь)\n
     </string>
+
+    <!-- Регистрация онлайн -->
+    <string name="fio">ФИО</string>
+    <string name="phone">Телефон</string>
+    <string name="rights">Серия и номер прав</string>
+    <string name="begin_date">Дата выдачи</string>
+    <string name="end_date">Дата окончания</string>
+    <string name="car_brand">Марка авто</string>
+    <string name="car_model">Модель авто</string>
+    <string name="car_color">Цвет</string>
+    <string name="car_number">Гос номер</string>
+    <string name="license">Серия и номер лицензии</string>
+    <string name="processing_yandex">Настоящим даю согласие на обработку  и передачу моих персональных данных
+        третьим лицам с целью обеспечения использования сервиса Яндекс.Такси в качестве водителя службы такси</string>
+    <string name="processing_contract">Даю согласие на обработку моих персональных данных,
+        а именно совершение действий, предусмотренных в Договоре.</string>
+    <string name="begin">Начать работу</string>
+
+    <!-- Контакты -->
+    <string name="whatsapp">WhatsApp</string>
+    <string name="viber">Viber</string>
+    <string name="telegram">Telegram</string>
 
 </resources>

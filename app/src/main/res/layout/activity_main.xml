@@ -33,32 +33,32 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/img_taxi2"
+                android:id="@+id/img_taxi_big"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="240dp"
                 android:contentDescription="@string/app_name"
+                android:paddingTop="@dimen/nav_header_vertical_spacing"
                 app:srcCompat="@drawable/taxi" />
 
             <TextView
-                android:id="@+id/txtName2"
+                android:id="@+id/txt_app_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:paddingTop="@dimen/nav_header_vertical_spacing"
                 android:text="@string/app_name"
                 android:textAlignment="center"
-                android:textColor="@color/colorAccent"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@android:color/background_dark"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txtPartner2"
+                android:id="@+id/txt_partner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="@string/partner"
                 android:textAlignment="center"
-                android:textColor="@color/colorAccent"
+                android:textColor="@android:color/background_dark"
                 android:textSize="18sp" />
 
             <FrameLayout

@@ -1,8 +1,9 @@
 <resources>
 
     <!-- URLs - only english -->
-    <string name="email">omtaxi@mail.ru</string>
-    <string name="link">https://play.google.com/store/apps/details?id=ru.yandex.taxi</string>
+    <string name="omtaxi_email">omtaxi@mail.ru</string>
+    <string name="omtaxi_phone">+79955015060</string>
+    <string name="omtaxi_share">https://play.google.com/store/apps/details?id=ru.yandex.taxi</string>
 
     <!-- Common strings -->
     <string name="app_name">OM Taxi</string>
@@ -41,5 +42,27 @@
     » Easy navigation \n
     » Bonuses from partners (food, fuel, washing, mobile communication) \n
     </string>
+
+    <!-- Online registration -->
+    <string name="fio">Full name</string>
+    <string name="phone">Phone</string>
+    <string name="rights">Series and number of rights</string>
+    <string name="begin_date">Date of issue of rights</string>
+    <string name="end_date">End date of rights</string>
+    <string name="car_brand">Car brand</string>
+    <string name="car_model">Car model</string>
+    <string name="car_color">Car color</string>
+    <string name="car_number">State number</string>
+    <string name="license">License number and serial number</string>
+    <string name="processing_yandex">I hereby consent to the processing and transfer of my personal data
+        to third parties in order to ensure the use of the Yandex.Taxi service as a taxi driver</string>
+    <string name="processing_contract">I consent to the processing of my personal data,
+        namely the performance of actions provided for in the Contract.</string>
+    <string name="begin">Начать работу</string>
+
+    <!-- Contacts -->
+    <string name="whatsapp">WhatsApp</string>
+    <string name="viber">Viber</string>
+    <string name="telegram">Telegram</string>
 
 </resources>
