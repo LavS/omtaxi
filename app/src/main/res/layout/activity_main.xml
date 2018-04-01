@@ -61,12 +61,18 @@
                 android:textColor="@android:color/background_dark"
                 android:textSize="18sp" />
 
-            <FrameLayout
-                android:id="@+id/inc_fragment"
+            <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-            </FrameLayout>
+                <FrameLayout
+                    android:id="@+id/inc_fragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </FrameLayout>
+
+            </ScrollView>
 
         </LinearLayout>
 
