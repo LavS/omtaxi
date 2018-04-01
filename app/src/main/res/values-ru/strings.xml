@@ -4,6 +4,11 @@
     <!--string name="omtaxi_email" -->
     <!--string name="omtaxi_phone" -->
     <!--string name="omtaxi_share" -->
+    <!--string name="url_install" -->
+    <!--string name="url_photocontrol" -->
+    <!--string name="url_firsttrip" -->
+    <!--string name="url_noorders" -->
+    <!--string name="url_faq" -->
 
     <!-- Общие строки-->
     <string name="app_name">OMTaxi</string>

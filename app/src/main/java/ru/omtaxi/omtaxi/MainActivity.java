@@ -125,28 +125,36 @@ public class MainActivity extends AppCompatActivity
         // Instructions
         } else if (id == R.id.btn_install) {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("https://play.google.com/store/apps/details?id=ru.yandex.taximeter"));
+                    Uri.parse(getResources().getString(R.string.url_install)));
             startActivity(browserIntent);
 
         } else if (id == R.id.btn_photocontrol) {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("https://driver.yandex/photocontrol/"));
+                    Uri.parse(getResources().getString(R.string.url_photocontrol)));
             startActivity(browserIntent);
 
         } else if (id == R.id.btn_firsttrip) {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("https://driver.yandex/урок-№1/"));
+                    Uri.parse(getResources().getString(R.string.url_firsttrip)));
             startActivity(browserIntent);
 
         } else if (id == R.id.btn_noorders) {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("https://driver.yandex/block-new/"));
+                    Uri.parse(getResources().getString(R.string.url_noorders)));
             startActivity(browserIntent);
 
         } else if (id == R.id.btn_faq) {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("https://driver.yandex/новичку/"));
+                    Uri.parse(getResources().getString(R.string.url_faq)));
             startActivity(browserIntent);
+
+        // Registration
+        } else if (id == R.id.btn_begin) {
+            Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+            emailIntent.setType("plain/text");
+            emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL,
+                    new String[] {(String) getResources().getText(R.string.omtaxi_email)});
+            startActivity(Intent.createChooser(emailIntent,getResources().getText(R.string.send)));
         }
 
         f_trans.addToBackStack(null);
