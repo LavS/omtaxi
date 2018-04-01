@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -94,7 +95,7 @@ public class MainActivity extends AppCompatActivity
             Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
             emailIntent.setType("plain/text");
             emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL,
-                    new String[] {(String) getResources().getText(R.string.omtaxi_email)});
+                    new String[] {getResources().getString(R.string.omtaxi_email)});
             startActivity(Intent.createChooser(emailIntent,getResources().getText(R.string.send)));
         }
 
@@ -153,11 +154,50 @@ public class MainActivity extends AppCompatActivity
             Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
             emailIntent.setType("plain/text");
             emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL,
-                    new String[] {(String) getResources().getText(R.string.omtaxi_email)});
+                    new String[] {getResources().getString(R.string.omtaxi_email)});
+            emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT,
+                    getResources().getString(R.string.email_registration));
+            emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, Registration());
             startActivity(Intent.createChooser(emailIntent,getResources().getText(R.string.send)));
         }
 
         f_trans.addToBackStack(null);
         f_trans.commit();
+    }
+
+    public String Registration()
+    {
+        String send;
+        send = getResources().getString(R.string.fio) + ": "
+                + ((EditText) findViewById(R.id.edt_fio)).getText().toString();
+
+        send = send + "\n" + getResources().getString(R.string.phone) + ": "
+                + ((EditText) findViewById(R.id.edt_phone)).getText().toString();
+
+        send = send + "\n" + getResources().getString(R.string.rights) + ": "
+                + ((EditText) findViewById(R.id.edt_rights)).getText().toString();
+
+        send = send + "\n" + getResources().getString(R.string.begin_date) + ": "
+                + ((EditText) findViewById(R.id.edt_begin_date)).getText().toString();
+
+        send = send + "\n" + getResources().getString(R.string.end_date) + ": "
+                + ((EditText) findViewById(R.id.edt_end_date)).getText().toString();
+
+        send = send + "\n" + getResources().getString(R.string.car_brand) + ": "
+                + ((EditText) findViewById(R.id.edt_car_brand)).getText().toString();
+
+        send = send + "\n" + getResources().getString(R.string.car_model) + ": "
+                + ((EditText) findViewById(R.id.edt_car_model)).getText().toString();
+
+        send = send + "\n" + getResources().getString(R.string.car_color) + ": "
+                + ((EditText) findViewById(R.id.edt_car_color)).getText().toString();
+
+        send = send + "\n" + getResources().getString(R.string.car_number) + ": "
+                + ((EditText) findViewById(R.id.edt_car_number)).getText().toString();
+
+        send = send + "\n" + getResources().getString(R.string.license) + ": "
+                + ((EditText) findViewById(R.id.edt_license)).getText().toString();
+
+        return send;
     }
 }

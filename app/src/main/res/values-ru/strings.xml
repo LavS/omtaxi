@@ -49,6 +49,7 @@
     </string>
 
     <!-- Регистрация онлайн -->
+    <string name="email_registration">Регистрация</string>
     <string name="fio">ФИО</string>
     <string name="phone">Телефон</string>
     <string name="rights">Серия и номер прав</string>

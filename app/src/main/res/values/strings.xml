@@ -49,6 +49,7 @@
     </string>
 
     <!-- Online registration -->
+    <string name="email_registration">Registration</string>
     <string name="fio">Full name</string>
     <string name="phone">Phone</string>
     <string name="rights">Series and number of rights</string>
