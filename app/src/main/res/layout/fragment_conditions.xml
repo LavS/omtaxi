@@ -9,9 +9,8 @@
         android:id="@+id/textView_about_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="casual"
         android:padding="8sp"
         android:text="@string/text_conditions"
-        android:textStyle="bold" />
+        android:textAppearance="@style/TextAppearance.AppCompat" />
 
 </android.support.constraint.ConstraintLayout>
