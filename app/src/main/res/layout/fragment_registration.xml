@@ -14,80 +14,80 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/fio" />
+            android:hint="@string/fio"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/edt_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="phone"
-            android:text="@string/phone" />
+            android:hint="@string/phone"
+            android:inputType="phone" />
 
         <EditText
             android:id="@+id/edt_rights"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="number"
-            android:text="@string/rights" />
+            android:hint="@string/rights"
+            android:inputType="number" />
 
         <EditText
             android:id="@+id/edt_begin_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="date"
-            android:text="@string/begin_date" />
+            android:hint="@string/begin_date"
+            android:inputType="date" />
 
         <EditText
             android:id="@+id/edt_end_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="date"
-            android:text="@string/end_date" />
+            android:hint="@string/end_date"
+            android:inputType="date" />
 
         <EditText
             android:id="@+id/edt_car_brand"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/car_brand" />
+            android:hint="@string/car_brand"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/edt_car_model"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/car_model" />
+            android:hint="@string/car_model"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/edt_car_color"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/car_color" />
+            android:hint="@string/car_color"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/edt_car_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/car_number" />
+            android:hint="@string/car_number"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/edt_license"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="number"
-            android:text="@string/license" />
+            android:hint="@string/license"
+            android:inputType="number" />
 
         <CheckBox
             android:id="@+id/chk_processing_yandex"
