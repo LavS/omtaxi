@@ -79,7 +79,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/car_number"
-            android:inputType="textPersonName" />
+            android:inputType="text" />
 
         <EditText
             android:id="@+id/edt_license"
@@ -89,17 +89,11 @@
             android:hint="@string/license"
             android:inputType="number" />
 
-        <CheckBox
-            android:id="@+id/chk_processing_yandex"
+        <TextView
+            android:id="@+id/txtProcessing"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/processing_yandex" />
-
-        <CheckBox
-            android:id="@+id/chk_processing_contract"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/processing_contract" />
+            android:text="@string/processing" />
 
         <Button
             android:id="@+id/btn_begin"
