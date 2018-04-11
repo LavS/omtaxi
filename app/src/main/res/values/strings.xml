@@ -1,18 +1,75 @@
 <resources>
-    <string name="app_name">OM Taxi</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <!-- URLs - only english -->
+    <string name="app_name" translatable="false">OMTaxi</string>
+    <string name="omtaxi_email" translatable="false">omtaxi@mail.ru</string>
+    <string name="omtaxi_phone" translatable="false">+79955015060</string>
+    <string name="omtaxi_share" translatable="false">https://play.google.com/store/apps/details?id=ru.yandex.taxi</string>
+    <string name="url_install" translatable="false">https://play.google.com/store/apps/details?id=ru.yandex.taximeter</string>
+    <string name="url_photocontrol" translatable="false">https://driver.yandex/photocontrol/</string>
+    <string name="url_firsttrip" translatable="false">https://driver.yandex/урок-№1/</string>
+    <string name="url_noorders" translatable="false">https://driver.yandex/block-new/</string>
+    <string name="url_faq" translatable="false">https://driver.yandex/новичку/</string>
 
-    <string name="action_settings">Settings</string>
+    <!-- Common strings -->
+    <string name="partner">Official Partner</string>
 
-    <string name="online">Registration online</string>
+    <!-- Sidebar menu -->
+    <string name="registration">Registration online</string>
     <string name="instructions">Useful instructions</string>
     <string name="conditions">Working conditions</string>
     <string name="contacts">Contacts</string>
-
     <string name="communicate">Communication</string>
     <string name="share">Share</string>
     <string name="send">Send</string>
+
+    <!-- Instructions -->
+    <string name="install">Installing a taximeter</string>
+    <string name="photocontrol">Photo control</string>
+    <string name="firsttrip">First Trip</string>
+    <string name="noorders">Orders do not arrive?</string>
+    <string name="faq">FAQ</string>
+
+    <!-- Work conditions -->
+    <string name="text_conditions">
+    Income: \n
+    » From 5000-6000 rubles per day on ECONOMY rates \n
+    » From 6000-7000 rubles per day at COMFORT rates \n
+    \n
+    Conditions: \n
+    » Connecting your car for free on the day of treatment \n
+    » Help with pasting machine in white or yellow \n
+    » We will issue a taxi license (from 2 days) \n
+    » Payment of earnings clearly once a week on Wednesdays \n
+    \n
+    Bonus: \n
+    » Increasing coefficient during high demand (stable morning / evening / weekend / rain) \n
+    » Easy navigation \n
+    » Bonuses from partners (food, fuel, washing, mobile communication) \n
+    </string>
+
+    <!-- Online registration -->
+    <string name="email_registration">Registration</string>
+    <string name="fio">Full name</string>
+    <string name="phone">Phone</string>
+    <string name="rights">Series and number of rights</string>
+    <string name="begin_date">Date of issue of rights</string>
+    <string name="end_date">End date of rights</string>
+    <string name="car_brand">Car brand</string>
+    <string name="car_model">Car model</string>
+    <string name="car_color">Car color</string>
+    <string name="car_number">State number</string>
+    <string name="license">License number and serial number</string>
+    <string name="processing">When I push button "Begin working"
+        I hereby consent to the processing and transfer of my personal data
+        to third parties in order to ensure the use of the Yandex.Taxi service as a taxi driver and
+        to the performance of actions provided for in the Contract.
+    </string>
+    <string name="begin">Begin working</string>
+
+    <!-- Contacts -->
+    <string name="whatsapp">WhatsApp</string>
+    <string name="viber">Viber</string>
+    <string name="telegram">Telegram</string>
 
 </resources>

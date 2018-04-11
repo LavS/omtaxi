@@ -1,45 +1,75 @@
 package ru.omtaxi.omtaxi;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.app.FragmentTransaction;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    FragmentMain f_main;
+    FragmentConditions f_conditions;
+    FragmentContacts f_contacts;
+    FragmentInstructions f_instructions;
+    FragmentRegistration f_registration;
+    FragmentTransaction f_trans;
+
+    Date date = new Date();
+    int myYear = date.getYear();
+    int myMonth = date.getMonth();
+    int myDay = date.getDay();
+    EditText etDate;
+    int date_id;
+    int DIALOG_DATE = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, drawer, toolbar, 0, 0);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setItemIconTintList(null);
+
+        f_main = new FragmentMain();
+        f_conditions = new FragmentConditions();
+        f_contacts = new FragmentContacts();
+        f_instructions = new FragmentInstructions();
+        f_registration = new FragmentRegistration();
+
+        f_trans = getFragmentManager().beginTransaction();
+        f_trans.add(R.id.inc_fragment, f_main);
+        f_trans.commit();
+
+        myYear = date.getYear();
+        myMonth = date.getMonth();
+        myDay = date.getDay();
     }
 
     @Override
@@ -52,50 +82,219 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        f_trans = getFragmentManager().beginTransaction();
 
-        if (id == R.id.nav_online) {
-            // Handle the camera action
+        if (id == R.id.nav_registration) {
+            f_trans.replace(R.id.inc_fragment, f_registration);
+
         } else if (id == R.id.nav_instructions) {
+            f_trans.replace(R.id.inc_fragment, f_instructions);
 
         } else if (id == R.id.nav_conditions) {
+            f_trans.replace(R.id.inc_fragment, f_conditions);
 
         } else if (id == R.id.nav_contacts) {
+            f_trans.replace(R.id.inc_fragment, f_contacts);
 
         } else if (id == R.id.nav_share) {
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.setType("text/plain");
+            sendIntent.putExtra(Intent.EXTRA_TEXT, getResources().getText(R.string.omtaxi_share));
+            startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.share)));
 
         } else if (id == R.id.nav_send) {
-
+            Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+            emailIntent.setType("plain/text");
+            emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL,
+                    new String[] {getResources().getString(R.string.omtaxi_email)});
+            startActivity(Intent.createChooser(emailIntent,getResources().getText(R.string.send)));
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        f_trans.addToBackStack(null);
+        f_trans.commit();
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    public void OnClick(View item)
+    {
+        int id = item.getId();
+        f_trans = getFragmentManager().beginTransaction();
+
+        // Main activity
+        if (id == R.id.btn_registration) {
+            f_trans.replace(R.id.inc_fragment, f_registration);
+
+        } else if (id == R.id.btn_instructions) {
+            f_trans.replace(R.id.inc_fragment, f_instructions);
+
+        } else if (id == R.id.btn_conditions) {
+            f_trans.replace(R.id.inc_fragment, f_conditions);
+
+        } else if (id == R.id.btn_contacts) {
+            f_trans.replace(R.id.inc_fragment, f_contacts);
+
+        // Instructions
+        } else if (id == R.id.btn_install) {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.url_install)));
+            startActivity(browserIntent);
+
+        } else if (id == R.id.btn_photocontrol) {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.url_photocontrol)));
+            startActivity(browserIntent);
+
+        } else if (id == R.id.btn_firsttrip) {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.url_firsttrip)));
+            startActivity(browserIntent);
+
+        } else if (id == R.id.btn_noorders) {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.url_noorders)));
+            startActivity(browserIntent);
+
+        } else if (id == R.id.btn_faq) {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.url_faq)));
+            startActivity(browserIntent);
+
+        // Registration
+        } else if (id == R.id.btn_begin) {
+            Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+            emailIntent.setType("plain/text");
+            emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[] {getResources().getString(R.string.omtaxi_email)});
+            emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getResources().getString(R.string.email_registration));
+            emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, Registration());
+            startActivity(Intent.createChooser(emailIntent,getResources().getText(R.string.send)));
+
+        // Contacts
+        } else if (id == R.id.btn_whatsapp) {
+            Intent whatsappIntent = new Intent(Intent.ACTION_SEND);
+            whatsappIntent.setType("text/plain");
+            whatsappIntent.setPackage("com.whatsapp");
+            whatsappIntent.setData(Uri.parse("tel:" + getResources().getString(R.string.omtaxi_phone)));
+            if (whatsappIntent != null) {
+                whatsappIntent.putExtra(Intent.EXTRA_TEXT, getResources().getString(R.string.app_name));
+                startActivity(Intent.createChooser(whatsappIntent, getResources().getString(R.string.send)));
+            } else {
+                Toast.makeText(item.getContext(), "WhatsApp not Installed", Toast.LENGTH_SHORT).show();
+            }
+
+        } else if (id == R.id.btn_viber) {
+            Intent viberIntent = new Intent("android.intent.action.VIEW");
+            viberIntent.setClassName("com.viber.voip", "com.viber.voip.WelcomeActivity");
+            viberIntent.setData(Uri.parse("tel:" + Uri.encode(getResources().getString(R.string.omtaxi_phone))));
+            viberIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            if (viberIntent != null) {
+                startActivity(Intent.createChooser(viberIntent, getResources().getString(R.string.send)));
+            } else {
+                Toast.makeText(item.getContext(), "Viber not Installed", Toast.LENGTH_SHORT).show();
+            }
+
+        } else if (id == R.id.btn_telegram) {
+            Intent telegramIntent = new Intent(Intent.ACTION_SEND);
+            telegramIntent.setType("text/plain");
+            telegramIntent.setPackage("org.telegram.messenger");
+            if (telegramIntent != null)
+            {
+                telegramIntent.putExtra(Intent.EXTRA_TEXT, getResources().getString(R.string.app_name));
+                startActivity(Intent.createChooser(telegramIntent, getResources().getString(R.string.send)));
+            }
+            else
+            {
+                Toast.makeText(item.getContext(), "Telegram not Installed", Toast.LENGTH_SHORT).show();
+            }
+
+        } else if (id == R.id.btn_telegram) {
+            try {
+            Intent telegramIntent = new Intent(Intent.ACTION_VIEW);
+            telegramIntent.setData(Uri.parse("http://telegram.me/lavsexpert"));
+            startActivity(telegramIntent);
+            } catch (Exception e) {
+                Toast.makeText(item.getContext(), "Telegram not Installed", Toast.LENGTH_SHORT).show();
+            }
+        } else if (id == R.id.btn_phone) {
+            Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
+            phoneIntent.setData(Uri.parse("tel:" + getResources().getString(R.string.omtaxi_phone)));
+            startActivity(phoneIntent);
+
+        } else if (id == R.id.btn_email) {
+            Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+            emailIntent.setType("plain/text");
+            emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL,
+                    new String[] {getResources().getString(R.string.omtaxi_email)});
+            startActivity(Intent.createChooser(emailIntent,getResources().getText(R.string.send)));
+        }
+
+        f_trans.addToBackStack(null);
+        f_trans.commit();
+    }
+
+    public String Registration()
+    {
+        String send;
+        send = getResources().getString(R.string.fio) + ": "
+                + ((EditText) findViewById(R.id.edt_fio)).getText().toString();
+
+        send = send + "\n" + getResources().getString(R.string.phone) + ": "
+                + ((EditText) findViewById(R.id.edt_phone)).getText().toString();
+
+        send = send + "\n" + getResources().getString(R.string.rights) + ": "
+                + ((EditText) findViewById(R.id.edt_rights)).getText().toString();
+
+        send = send + "\n" + getResources().getString(R.string.begin_date) + ": "
+                + ((EditText) findViewById(R.id.edt_begin_date)).getText().toString();
+
+        send = send + "\n" + getResources().getString(R.string.end_date) + ": "
+                + ((EditText) findViewById(R.id.edt_end_date)).getText().toString();
+
+        send = send + "\n" + getResources().getString(R.string.car_brand) + ": "
+                + ((EditText) findViewById(R.id.edt_car_brand)).getText().toString();
+
+        send = send + "\n" + getResources().getString(R.string.car_model) + ": "
+                + ((EditText) findViewById(R.id.edt_car_model)).getText().toString();
+
+        send = send + "\n" + getResources().getString(R.string.car_color) + ": "
+                + ((EditText) findViewById(R.id.edt_car_color)).getText().toString();
+
+        send = send + "\n" + getResources().getString(R.string.car_number) + ": "
+                + ((EditText) findViewById(R.id.edt_car_num)).getText().toString();
+
+        send = send + "\n" + getResources().getString(R.string.license) + ": "
+                + ((EditText) findViewById(R.id.edt_license)).getText().toString();
+
+        return send;
+    }
+
+    public void OnSetDate(View view) {
+        date_id = view.getId();
+        if (date_id == R.id.btn_begin_date) {
+            date_id = R.id.edt_begin_date;
+        }
+        else if (date_id == R.id.btn_end_date)
+        {
+            date_id = R.id.edt_end_date;
+        }
+        showDialog(DIALOG_DATE);
+    }
+
+    protected Dialog onCreateDialog(int id) {
+        if (id == DIALOG_DATE) {
+            DatePickerDialog tpd = new DatePickerDialog(this, myCallBack, myYear, myMonth, myDay);
+            return tpd;
+        }
+        return super.onCreateDialog(id);
+    }
+
+    DatePickerDialog.OnDateSetListener myCallBack = new DatePickerDialog.OnDateSetListener() {
+        public void onDateSet(DatePicker view, int myYear, int myMonth, int myDay) {
+            etDate = (EditText) findViewById(date_id);
+            etDate.setText((CharSequence) (myDay + "." + (myMonth + 1) + "." + myYear));
+        }
+    };
+
 }

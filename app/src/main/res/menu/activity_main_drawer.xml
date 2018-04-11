@@ -1,36 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group android:id="@+id/nav_group">
         <item
-            android:id="@+id/nav_online"
-            android:icon="@mipmap/ic_online"
-            android:title="@string/online" />
+            android:id="@+id/nav_registration"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/ic_registration"
+            android:title="@string/registration" />
         <item
             android:id="@+id/nav_instructions"
-            android:icon="@mipmap/ic_instructions"
+            android:icon="@drawable/ic_instructions"
             android:title="@string/instructions" />
         <item
             android:id="@+id/nav_conditions"
-            android:icon="@mipmap/ic_conditions"
+            android:icon="@drawable/ic_conditions"
             android:title="@string/conditions" />
         <item
             android:id="@+id/nav_contacts"
-            android:icon="@mipmap/ic_contacts"
+            android:icon="@drawable/ic_contacts"
             android:title="@string/contacts" />
     </group>
 
-    <item android:title="@string/communicate">
+    <item
+        android:id="@+id/nav_communicate"
+        android:title="@string/communicate">
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/ic_share"
                 android:title="@string/share" />
             <item
                 android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_send"
                 android:title="@string/send" />
         </menu>
     </item>
