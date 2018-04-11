@@ -20,28 +20,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="OnClick"
-            android:text="@string/registration"></Button>
+            android:text="@string/registration"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"></Button>
 
         <Button
             android:id="@+id/btn_instructions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="OnClick"
-            android:text="@string/instructions"></Button>
+            android:text="@string/instructions"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"></Button>
 
         <Button
             android:id="@+id/btn_conditions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="OnClick"
-            android:text="@string/conditions"></Button>
+            android:text="@string/conditions"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"></Button>
 
         <Button
             android:id="@+id/btn_contacts"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="OnClick"
-            android:text="@string/contacts"></Button>
+            android:text="@string/contacts"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"></Button>
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

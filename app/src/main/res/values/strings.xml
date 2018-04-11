@@ -1,17 +1,17 @@
 <resources>
 
     <!-- URLs - only english -->
-    <string name="omtaxi_email">omtaxi@mail.ru</string>
-    <string name="omtaxi_phone">+79955015060</string>
-    <string name="omtaxi_share">https://play.google.com/store/apps/details?id=ru.yandex.taxi</string>
-    <string name="url_install">https://play.google.com/store/apps/details?id=ru.yandex.taximeter</string>
-    <string name="url_photocontrol">https://driver.yandex/photocontrol/</string>
-    <string name="url_firsttrip">https://driver.yandex/урок-№1/</string>
-    <string name="url_noorders">https://driver.yandex/block-new/</string>
-    <string name="url_faq">https://driver.yandex/новичку/</string>
+    <string name="app_name" translatable="false">OMTaxi</string>
+    <string name="omtaxi_email" translatable="false">omtaxi@mail.ru</string>
+    <string name="omtaxi_phone" translatable="false">+79955015060</string>
+    <string name="omtaxi_share" translatable="false">https://play.google.com/store/apps/details?id=ru.yandex.taxi</string>
+    <string name="url_install" translatable="false">https://play.google.com/store/apps/details?id=ru.yandex.taximeter</string>
+    <string name="url_photocontrol" translatable="false">https://driver.yandex/photocontrol/</string>
+    <string name="url_firsttrip" translatable="false">https://driver.yandex/урок-№1/</string>
+    <string name="url_noorders" translatable="false">https://driver.yandex/block-new/</string>
+    <string name="url_faq" translatable="false">https://driver.yandex/новичку/</string>
 
     <!-- Common strings -->
-    <string name="app_name">OMTaxi</string>
     <string name="partner">Official Partner</string>
 
     <!-- Sidebar menu -->
@@ -60,11 +60,12 @@
     <string name="car_color">Car color</string>
     <string name="car_number">State number</string>
     <string name="license">License number and serial number</string>
-    <string name="processing_yandex">I hereby consent to the processing and transfer of my personal data
-        to third parties in order to ensure the use of the Yandex.Taxi service as a taxi driver</string>
-    <string name="processing_contract">I consent to the processing of my personal data,
-        namely the performance of actions provided for in the Contract.</string>
-    <string name="begin">Начать работу</string>
+    <string name="processing">When I push button "Begin working"
+        I hereby consent to the processing and transfer of my personal data
+        to third parties in order to ensure the use of the Yandex.Taxi service as a taxi driver and
+        to the performance of actions provided for in the Contract.
+    </string>
+    <string name="begin">Begin working</string>
 
     <!-- Contacts -->
     <string name="whatsapp">WhatsApp</string>
