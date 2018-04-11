@@ -1,17 +1,17 @@
 <resources>
 
     <!-- URLs - only english -->
-    <string name="omtaxi_email">omtaxi@mail.ru</string>
-    <string name="omtaxi_phone">+79955015060</string>
-    <string name="omtaxi_share">https://play.google.com/store/apps/details?id=ru.yandex.taxi</string>
-    <string name="url_install">https://play.google.com/store/apps/details?id=ru.yandex.taximeter</string>
-    <string name="url_photocontrol">https://driver.yandex/photocontrol/</string>
-    <string name="url_firsttrip">https://driver.yandex/урок-№1/</string>
-    <string name="url_noorders">https://driver.yandex/block-new/</string>
-    <string name="url_faq">https://driver.yandex/новичку/</string>
+    <string name="app_name" translatable="false">OMTaxi</string>
+    <string name="omtaxi_email" translatable="false">omtaxi@mail.ru</string>
+    <string name="omtaxi_phone" translatable="false">+79955015060</string>
+    <string name="omtaxi_share" translatable="false">https://play.google.com/store/apps/details?id=ru.yandex.taxi</string>
+    <string name="url_install" translatable="false">https://play.google.com/store/apps/details?id=ru.yandex.taximeter</string>
+    <string name="url_photocontrol" translatable="false">https://driver.yandex/photocontrol/</string>
+    <string name="url_firsttrip" translatable="false">https://driver.yandex/урок-№1/</string>
+    <string name="url_noorders" translatable="false">https://driver.yandex/block-new/</string>
+    <string name="url_faq" translatable="false">https://driver.yandex/новичку/</string>
 
     <!-- Common strings -->
-    <string name="app_name">OMTaxi</string>
     <string name="partner">Official Partner</string>
 
     <!-- Sidebar menu -->
