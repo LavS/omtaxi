@@ -24,19 +24,19 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    FragmentMain f_main;
-    FragmentConditions f_conditions;
-    FragmentContacts f_contacts;
-    FragmentInstructions f_instructions;
-    FragmentRegistration f_registration;
-    FragmentTransaction f_trans;
+    FragmentMain fMain;
+    FragmentConditions fConditions;
+    FragmentContacts fContacts;
+    FragmentInstructions fInstructions;
+    FragmentRegistration fRegistration;
+    FragmentTransaction fTrans;
 
     Date date = new Date();
     int myYear = date.getYear();
     int myMonth = date.getMonth();
     int myDay = date.getDay();
     EditText etDate;
-    int date_id;
+    int dateId;
     int DIALOG_DATE = 1;
 
     @Override
@@ -57,15 +57,15 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemIconTintList(null);
 
-        f_main = new FragmentMain();
-        f_conditions = new FragmentConditions();
-        f_contacts = new FragmentContacts();
-        f_instructions = new FragmentInstructions();
-        f_registration = new FragmentRegistration();
+        fMain = new FragmentMain();
+        fConditions = new FragmentConditions();
+        fContacts = new FragmentContacts();
+        fInstructions = new FragmentInstructions();
+        fRegistration = new FragmentRegistration();
 
-        f_trans = getFragmentManager().beginTransaction();
-        f_trans.add(R.id.inc_fragment, f_main);
-        f_trans.commit();
+        fTrans = getFragmentManager().beginTransaction();
+        fTrans.add(R.id.inc_fragment, fMain);
+        fTrans.commit();
 
         myYear = date.getYear();
         myMonth = date.getMonth();
@@ -88,19 +88,19 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        f_trans = getFragmentManager().beginTransaction();
+        fTrans = getFragmentManager().beginTransaction();
 
         if (id == R.id.nav_registration) {
-            f_trans.replace(R.id.inc_fragment, f_registration);
+            fTrans.replace(R.id.inc_fragment, fRegistration);
 
         } else if (id == R.id.nav_instructions) {
-            f_trans.replace(R.id.inc_fragment, f_instructions);
+            fTrans.replace(R.id.inc_fragment, fInstructions);
 
         } else if (id == R.id.nav_conditions) {
-            f_trans.replace(R.id.inc_fragment, f_conditions);
+            fTrans.replace(R.id.inc_fragment, fConditions);
 
         } else if (id == R.id.nav_contacts) {
-            f_trans.replace(R.id.inc_fragment, f_contacts);
+            fTrans.replace(R.id.inc_fragment, fContacts);
 
         } else if (id == R.id.nav_share) {
             Intent sendIntent = new Intent();
@@ -117,8 +117,8 @@ public class MainActivity extends AppCompatActivity
             startActivity(Intent.createChooser(emailIntent,getResources().getText(R.string.send)));
         }
 
-        f_trans.addToBackStack(null);
-        f_trans.commit();
+        fTrans.addToBackStack(null);
+        fTrans.commit();
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
@@ -126,20 +126,20 @@ public class MainActivity extends AppCompatActivity
     public void OnClick(View item)
     {
         int id = item.getId();
-        f_trans = getFragmentManager().beginTransaction();
+        fTrans = getFragmentManager().beginTransaction();
 
         // Main activity
         if (id == R.id.btn_registration) {
-            f_trans.replace(R.id.inc_fragment, f_registration);
+            fTrans.replace(R.id.inc_fragment, fRegistration);
 
         } else if (id == R.id.btn_instructions) {
-            f_trans.replace(R.id.inc_fragment, f_instructions);
+            fTrans.replace(R.id.inc_fragment, fInstructions);
 
         } else if (id == R.id.btn_conditions) {
-            f_trans.replace(R.id.inc_fragment, f_conditions);
+            fTrans.replace(R.id.inc_fragment, fConditions);
 
         } else if (id == R.id.btn_contacts) {
-            f_trans.replace(R.id.inc_fragment, f_contacts);
+            fTrans.replace(R.id.inc_fragment, fContacts);
 
         // Instructions
         } else if (id == R.id.btn_install) {
@@ -230,8 +230,8 @@ public class MainActivity extends AppCompatActivity
             startActivity(Intent.createChooser(emailIntent,getResources().getText(R.string.send)));
         }
 
-        f_trans.addToBackStack(null);
-        f_trans.commit();
+        fTrans.addToBackStack(null);
+        fTrans.commit();
     }
 
     public String Registration()
@@ -271,13 +271,13 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void OnSetDate(View view) {
-        date_id = view.getId();
-        if (date_id == R.id.btn_begin_date) {
-            date_id = R.id.edt_begin_date;
+        dateId = view.getId();
+        if (dateId == R.id.btn_begin_date) {
+            dateId = R.id.edt_begin_date;
         }
-        else if (date_id == R.id.btn_end_date)
+        else if (dateId == R.id.btn_end_date)
         {
-            date_id = R.id.edt_end_date;
+            dateId = R.id.edt_end_date;
         }
         showDialog(DIALOG_DATE);
     }
@@ -292,7 +292,7 @@ public class MainActivity extends AppCompatActivity
 
     DatePickerDialog.OnDateSetListener myCallBack = new DatePickerDialog.OnDateSetListener() {
         public void onDateSet(DatePicker view, int myYear, int myMonth, int myDay) {
-            etDate = (EditText) findViewById(date_id);
+            etDate = (EditText) findViewById(dateId);
             etDate.setText((CharSequence) (myDay + "." + (myMonth + 1) + "." + myYear));
         }
     };
