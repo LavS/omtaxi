@@ -31,10 +31,8 @@ public class MainActivity extends AppCompatActivity
     FragmentRegistration fRegistration;
     FragmentTransaction fTrans;
 
-    Date date = new Date();
-    int myYear = date.getYear();
-    int myMonth = date.getMonth();
-    int myDay = date.getDay();
+    Date date;
+    int myYear, myMonth, myDay;
     EditText etDate;
     int dateId;
     int DIALOG_DATE = 1;
@@ -67,9 +65,11 @@ public class MainActivity extends AppCompatActivity
         fTrans.add(R.id.inc_fragment, fMain);
         fTrans.commit();
 
-        myYear = date.getYear();
-        myMonth = date.getMonth();
+        date = new Date();
+        myYear = date.getYear() + 1900;
+        myMonth = date.getMonth() + 1;
         myDay = date.getDay();
+
     }
 
     @Override
@@ -108,14 +108,18 @@ public class MainActivity extends AppCompatActivity
             sendIntent.setType("text/plain");
             sendIntent.putExtra(Intent.EXTRA_TEXT, getResources().getText(R.string.omtaxi_share));
             startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.share)));
+        }
 
+        /*
         } else if (id == R.id.nav_send) {
             Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
             emailIntent.setType("plain/text");
             emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL,
                     new String[] {getResources().getString(R.string.omtaxi_email)});
             startActivity(Intent.createChooser(emailIntent,getResources().getText(R.string.send)));
-        }
+
+        */
+
 
         fTrans.addToBackStack(null);
         fTrans.commit();
@@ -172,6 +176,8 @@ public class MainActivity extends AppCompatActivity
             startActivity(Intent.createChooser(emailIntent,getResources().getText(R.string.send)));
 
         // Contacts
+            
+        /*
         } else if (id == R.id.btn_whatsapp) {
             Intent whatsappIntent = new Intent(Intent.ACTION_SEND);
             whatsappIntent.setType("text/plain");
@@ -217,6 +223,9 @@ public class MainActivity extends AppCompatActivity
             } catch (Exception e) {
                 Toast.makeText(item.getContext(), "Telegram not Installed", Toast.LENGTH_SHORT).show();
             }
+
+        */
+
         } else if (id == R.id.btn_phone) {
             Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
             phoneIntent.setData(Uri.parse("tel:" + getResources().getString(R.string.omtaxi_phone)));
@@ -232,6 +241,7 @@ public class MainActivity extends AppCompatActivity
 
         fTrans.addToBackStack(null);
         fTrans.commit();
+
     }
 
     public String Registration()
@@ -266,6 +276,8 @@ public class MainActivity extends AppCompatActivity
 
         send = send + "\n" + getResources().getString(R.string.license) + ": "
                 + ((EditText) findViewById(R.id.edt_license)).getText().toString();
+
+        send = send + "\n" + getResources().getString(R.string.processing);
 
         return send;
     }
