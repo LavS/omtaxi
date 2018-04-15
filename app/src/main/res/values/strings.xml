@@ -4,7 +4,7 @@
     <string name="app_name" translatable="false">OM Taxi</string>
     <string name="omtaxi_email" translatable="false">omtaxi@mail.ru</string>
     <string name="omtaxi_phone" translatable="false">+79955015060</string>
-    <string name="omtaxi_share" translatable="false">https://play.google.com/store/apps/details?id=ru.omapp.drivers</string>
+    <string name="omtaxi_share" translatable="false">https://play.google.com/store/apps/details?id=ru.omapp.driver</string>
     <string name="url_install" translatable="false">https://play.google.com/store/apps/details?id=ru.yandex.taximeter</string>
     <string name="url_photocontrol" translatable="false">https://driver.yandex/photocontrol/</string>
     <string name="url_firsttrip" translatable="false">https://driver.yandex/урок-№1/</string>
@@ -71,5 +71,7 @@
     <string name="whatsapp">WhatsApp</string>
     <string name="viber">Viber</string>
     <string name="telegram">Telegram</string>
+
+    <string name="author">App developed by Lavrov Sergey</string>
 
 </resources>

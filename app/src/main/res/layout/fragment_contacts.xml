@@ -71,5 +71,14 @@
             android:onClick="OnClick"
             android:text="@string/omtaxi_email"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+        <!--
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/author"
+            android:textAlignment="center" />
+        -->
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

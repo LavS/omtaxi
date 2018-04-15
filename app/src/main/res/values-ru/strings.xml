@@ -73,4 +73,6 @@
     <string name="telegram">Telegram</string>
     <string name="app_name">OMTaxi</string>
 
+    <string name="author">Приложение разработал Лавров Сергей</string>
+
 </resources>

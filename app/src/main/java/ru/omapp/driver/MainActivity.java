@@ -1,4 +1,4 @@
-package ru.omapp.drivers;
+package ru.omapp.driver;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
