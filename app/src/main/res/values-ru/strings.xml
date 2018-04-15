@@ -13,6 +13,7 @@
 
     <!-- Общие строки-->
     <string name="partner">Официальный партнер</string>
+    <string name="menu">Меню</string>>
 
     <!-- Боковое меню -->
     <string name="registration">Подключение онлайн</string>

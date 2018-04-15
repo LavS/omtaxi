@@ -1,4 +1,4 @@
-package ru.omtaxi.omtaxi;
+package ru.omapp.drivers;
 
 import android.app.Fragment;
 import android.os.Bundle;

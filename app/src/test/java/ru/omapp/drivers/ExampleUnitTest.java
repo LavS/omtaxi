@@ -1,4 +1,4 @@
-package ru.omtaxi.omtaxi;
+package ru.omapp.drivers;
 
 import org.junit.Test;
 

@@ -4,7 +4,7 @@
     <string name="app_name" translatable="false">OMTaxi</string>
     <string name="omtaxi_email" translatable="false">omtaxi@mail.ru</string>
     <string name="omtaxi_phone" translatable="false">+79955015060</string>
-    <string name="omtaxi_share" translatable="false">https://play.google.com/store/apps/details?id=ru.omtaxi.omtaxi</string>
+    <string name="omtaxi_share" translatable="false">https://play.google.com/store/apps/details?id=ru.omapp.drivers</string>
     <string name="url_install" translatable="false">https://play.google.com/store/apps/details?id=ru.yandex.taximeter</string>
     <string name="url_photocontrol" translatable="false">https://driver.yandex/photocontrol/</string>
     <string name="url_firsttrip" translatable="false">https://driver.yandex/урок-№1/</string>
@@ -13,6 +13,7 @@
 
     <!-- Common strings -->
     <string name="partner">Official Partner</string>
+    <string name="menu">Menu</string>>
 
     <!-- Sidebar menu -->
     <string name="registration">Registration online</string>

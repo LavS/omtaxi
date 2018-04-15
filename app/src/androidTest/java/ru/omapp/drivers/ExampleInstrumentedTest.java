@@ -1,4 +1,4 @@
-package ru.omtaxi.omtaxi;
+package ru.omapp.drivers;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("ru.omtaxi.omtaxi", appContext.getPackageName());
+        assertEquals("ru.omapp.drivers", appContext.getPackageName());
     }
 }

@@ -1,4 +1,4 @@
-package ru.omtaxi.omtaxi;
+package ru.omapp.drivers;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity
         myMonth = date.getMonth() + 1;
         myDay = date.getDay();
 
+        setTitle(R.string.menu);
     }
 
     @Override
