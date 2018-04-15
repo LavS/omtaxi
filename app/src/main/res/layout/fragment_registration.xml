@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/rights"
-            android:inputType="number" />
+            android:inputType="text" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -47,7 +47,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="@string/begin_date"
-                android:inputType="text"
+                android:inputType="date"
                 android:singleLine="true" />
 
             <ImageButton
@@ -75,7 +75,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="@string/end_date"
-                android:inputType="text"
+                android:inputType="date"
                 android:singleLine="true" />
 
             <ImageButton
@@ -129,7 +129,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/license"
-            android:inputType="number" />
+            android:inputType="text" />
 
         <TextView
             android:id="@+id/txtProcessing"

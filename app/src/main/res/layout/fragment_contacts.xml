@@ -10,6 +10,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <!--
         <Button
             android:id="@+id/btn_whatsapp"
             android:layout_width="match_parent"
@@ -18,7 +19,8 @@
             android:background="@android:color/holo_green_dark"
             android:onClick="OnClick"
             android:text="@string/whatsapp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:visibility="invisible" />
 
         <Button
             android:id="@+id/btn_viber"
@@ -28,7 +30,8 @@
             android:background="@android:color/holo_purple"
             android:onClick="OnClick"
             android:text="@string/viber"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:visibility="invisible" />
 
         <Button
             android:id="@+id/btn_telegram"
@@ -38,7 +41,8 @@
             android:background="@android:color/holo_blue_light"
             android:onClick="OnClick"
             android:text="@string/telegram"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:visibility="invisible" />
 
         <Button
             android:id="@+id/btn_telegram2"
@@ -49,6 +53,8 @@
             android:onClick="OnClick"
             android:text="@string/telegram"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+        -->
 
         <Button
             android:id="@+id/btn_phone"
