@@ -1,7 +1,7 @@
 <resources>
 
     <!-- URLs - only english -->
-    <string name="app_name" translatable="false">OMTaxi</string>
+    <string name="app_name" translatable="false">OM Taxi</string>
     <string name="omtaxi_email" translatable="false">omtaxi@mail.ru</string>
     <string name="omtaxi_phone" translatable="false">+79955015060</string>
     <string name="omtaxi_share" translatable="false">https://play.google.com/store/apps/details?id=ru.omapp.drivers</string>

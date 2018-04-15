@@ -134,11 +134,14 @@ public class MainActivity extends AppCompatActivity
         fTrans = getFragmentManager().beginTransaction();
 
         // Main activity
-        if (id == R.id.btn_registration) {
+        if (id == R.id.header) {
+            fTrans.replace(R.id.inc_fragment, fMain);
+
+        } else if (id == R.id.btn_registration) {
             fTrans.replace(R.id.inc_fragment, fRegistration);
 
         } else if (id == R.id.btn_instructions) {
-            fTrans.replace(R.id.inc_fragment, fInstructions);
+        fTrans.replace(R.id.inc_fragment, fInstructions);
 
         } else if (id == R.id.btn_conditions) {
             fTrans.replace(R.id.inc_fragment, fConditions);
