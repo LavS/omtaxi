@@ -60,10 +60,10 @@
     <string name="car_color">Car color</string>
     <string name="car_number">State number</string>
     <string name="license">License number and serial number</string>
-    <string name="processing">When I push button "Begin working"
-        I hereby consent to the processing and transfer of my personal data
-        to third parties in order to ensure the use of the Yandex.Taxi service as a taxi driver and
-        to the performance of actions provided for in the Contract.
+    <string name="processing">
+    When I push button "Begin working" I hereby consent to the processing and transfer of my personal data
+    to third parties in order to ensure the use of the Yandex.Taxi service as a taxi driver and
+    to the performance of actions provided for in the Contract.
     </string>
     <string name="begin">Begin working</string>
 
