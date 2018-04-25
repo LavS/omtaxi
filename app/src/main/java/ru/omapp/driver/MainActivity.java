@@ -1,6 +1,5 @@
 package ru.omapp.driver;
 
-import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.FragmentTransaction;
@@ -27,6 +26,7 @@ import ru.omapp.driver.fragment.FragmentContacts;
 import ru.omapp.driver.fragment.FragmentInstructions;
 import ru.omapp.driver.fragment.FragmentMain;
 import ru.omapp.driver.fragment.FragmentRegistration;
+import ru.omapp.driver.fragment.FragmentSuccess;
 import ru.omapp.driver.mail.ExtendedMail;
 import ru.omapp.driver.mail.SimpleEMail;
 
@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity
     FragmentContacts fContacts;
     FragmentInstructions fInstructions;
     FragmentRegistration fRegistration;
+    FragmentSuccess fSuccess;
     FragmentTransaction fTrans;
 
     Date date;
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity
         fContacts = new FragmentContacts();
         fInstructions = new FragmentInstructions();
         fRegistration = new FragmentRegistration();
+        fSuccess = new FragmentSuccess();
 
         fTrans = getFragmentManager().beginTransaction();
         fTrans.add(R.id.inc_fragment, fMain);
@@ -191,7 +193,7 @@ public class MainActivity extends AppCompatActivity
             String emailtext = Registration();
             //SimpleEMail mail = new SimpleEMail(this, address, subject, emailtext);
             ExtendedMail mail = new ExtendedMail(this, address, subject, emailtext);
-            fTrans.replace(R.id.inc_fragment, fMain);
+            fTrans.replace(R.id.inc_fragment, fSuccess);
 
         // Contacts
             

@@ -67,6 +67,7 @@
     </string>
     <string name="begin">Begin working</string>
     <string name="sendmail">Send mail...</string>
+    <string name="success">Success.\nWe are call you in few days.</string>
 
     <!-- Contacts -->
     <string name="whatsapp">WhatsApp</string>
