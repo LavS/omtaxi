@@ -66,6 +66,7 @@
     моих персональных данных с целью обеспечения использования сервиса Яндекс.Такси.
     </string>
     <string name="begin">Начать работу</string>
+    <string name="sendmail">Отправка письма...</string>
 
     <!-- Контакты -->
     <string name="whatsapp">WhatsApp</string>

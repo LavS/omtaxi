@@ -1,8 +1,10 @@
 package ru.omapp.driver;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
@@ -17,12 +19,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import java.util.Date;
 
+import ru.omapp.driver.fragment.FragmentConditions;
+import ru.omapp.driver.fragment.FragmentContacts;
+import ru.omapp.driver.fragment.FragmentInstructions;
+import ru.omapp.driver.fragment.FragmentMain;
+import ru.omapp.driver.fragment.FragmentRegistration;
+import ru.omapp.driver.mail.SimpleEMail;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    Context mainContext;
 
     FragmentMain fMain;
     FragmentConditions fConditions;
@@ -71,6 +81,8 @@ public class MainActivity extends AppCompatActivity
         myDay = date.getDay();
 
         setTitle(R.string.menu);
+
+        mainContext = this;
     }
 
     @Override
@@ -172,12 +184,11 @@ public class MainActivity extends AppCompatActivity
 
         // Registration
         } else if (id == R.id.btn_begin) {
-            Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
-            emailIntent.setType("plain/text");
-            emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[] {getResources().getString(R.string.omtaxi_email)});
-            emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getResources().getString(R.string.email_registration));
-            emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, Registration());
-            startActivity(Intent.createChooser(emailIntent,getResources().getText(R.string.send)));
+
+            String address = getResources().getString(R.string.omtaxi_email);
+            String subject = getResources().getString(R.string.email_registration);
+            String emailtext = Registration();
+            SimpleEMail mail = new SimpleEMail(this, address, subject, emailtext);
 
         // Contacts
             

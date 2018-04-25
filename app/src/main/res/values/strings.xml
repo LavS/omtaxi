@@ -66,6 +66,7 @@
     of my personal data in order to ensure the use of the Yandex.Taxi service.
     </string>
     <string name="begin">Begin working</string>
+    <string name="sendmail">Send mail...</string>
 
     <!-- Contacts -->
     <string name="whatsapp">WhatsApp</string>
