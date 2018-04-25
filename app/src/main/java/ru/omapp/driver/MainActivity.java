@@ -27,6 +27,7 @@ import ru.omapp.driver.fragment.FragmentContacts;
 import ru.omapp.driver.fragment.FragmentInstructions;
 import ru.omapp.driver.fragment.FragmentMain;
 import ru.omapp.driver.fragment.FragmentRegistration;
+import ru.omapp.driver.mail.ExtendedMail;
 import ru.omapp.driver.mail.SimpleEMail;
 
 public class MainActivity extends AppCompatActivity
@@ -188,7 +189,9 @@ public class MainActivity extends AppCompatActivity
             String address = getResources().getString(R.string.omtaxi_email);
             String subject = getResources().getString(R.string.email_registration);
             String emailtext = Registration();
-            SimpleEMail mail = new SimpleEMail(this, address, subject, emailtext);
+            //SimpleEMail mail = new SimpleEMail(this, address, subject, emailtext);
+            ExtendedMail mail = new ExtendedMail(this, address, subject, emailtext);
+            fTrans.replace(R.id.inc_fragment, fMain);
 
         // Contacts
             
