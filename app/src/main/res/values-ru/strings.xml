@@ -55,11 +55,11 @@
 
     <!-- Регистрация онлайн -->
     <string name="email_registration">Регистрация</string>
-    <string name="fio">ФИО</string>
-    <string name="phone">Телефон</string>
-    <string name="rights">Серия и номер прав</string>
-    <string name="begin_date">Дата выдачи</string>
-    <string name="end_date">Дата окончания</string>
+    <string name="fio">*ФИО</string>
+    <string name="phone">*Телефон</string>
+    <string name="rights">*Серия и номер прав</string>
+    <string name="begin_date">*Дата выдачи</string>
+    <string name="end_date">*Дата окончания</string>
     <string name="car_brand">Марка авто</string>
     <string name="car_model">Модель авто</string>
     <string name="car_color">Цвет</string>

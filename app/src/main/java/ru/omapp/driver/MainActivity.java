@@ -6,7 +6,6 @@ import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -17,13 +16,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.Date;
-import java.util.List;
-import java.util.Locale;
 
 import ru.omapp.driver.fragment.FragmentConditions;
 import ru.omapp.driver.fragment.FragmentContacts;
@@ -182,6 +180,7 @@ public class MainActivity extends AppCompatActivity
             ExtendedMail mail = new ExtendedMail(this, address, subject, emailtext);
             fTrans.replace(R.id.inc_fragment, fSuccess);
 
+
         // Contacts
 
         } else if (id == R.id.btn_whatsapp) {
@@ -246,8 +245,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    public String Registration()
-    {
+    public String Registration(){
         String send;
         send = getResources().getString(R.string.fio) + ": "
                 + ((EditText) findViewById(R.id.edt_fio)).getText().toString();
@@ -310,6 +308,19 @@ public class MainActivity extends AppCompatActivity
             etDate.setText((CharSequence) (myDay + "." + (myMonth + 1) + "." + myYear));
         }
     };
+
+    public void OnChangeText(View item){
+        boolean isEmpty = ((EditText) findViewById(R.id.edt_fio)).getText().toString().trim().equals("")
+                || ((EditText) findViewById(R.id.edt_phone)).getText().toString().trim().equals("")
+                || ((EditText) findViewById(R.id.edt_rights)).getText().toString().trim().equals("")
+                || ((EditText) findViewById(R.id.edt_begin_date)).getText().toString().trim().equals("")
+                || ((EditText) findViewById(R.id.edt_end_date)).getText().toString().trim().equals("");
+        ((Button) findViewById(R.id.btn_begin)).setEnabled(!isEmpty);
+
+        //Toast.makeText(this, "Текст:"+((EditText) item).getText().toString()
+        //        + " - " +Boolean.toString(!isEmpty), Toast.LENGTH_SHORT).show();
+    }
+
 
 }
 

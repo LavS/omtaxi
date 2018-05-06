@@ -55,11 +55,11 @@
 
     <!-- Online registration -->
     <string name="email_registration">Registration</string>
-    <string name="fio">Full name</string>
-    <string name="phone">Phone</string>
-    <string name="rights">Series and number of rights</string>
-    <string name="begin_date">Date of issue of rights</string>
-    <string name="end_date">End date of rights</string>
+    <string name="fio">*Full name</string>
+    <string name="phone">*Phone</string>
+    <string name="rights">*Series and number of rights</string>
+    <string name="begin_date">*Date of issue of rights</string>
+    <string name="end_date">*End date of rights</string>
     <string name="car_brand">Car brand</string>
     <string name="car_model">Car model</string>
     <string name="car_color">Car color</string>
