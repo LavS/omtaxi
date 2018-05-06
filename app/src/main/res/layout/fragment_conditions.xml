@@ -5,13 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView_about_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="8sp"
-        android:text="@string/text_conditions"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textSize="18sp" />
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="ru.omapp.driver.MainActivity">
+        <TextView
+            android:id="@+id/textView_about_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8sp"
+            android:text="@string/text_conditions"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="18sp" />
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

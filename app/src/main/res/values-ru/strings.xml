@@ -10,6 +10,9 @@
     <!--string name="url_firsttrip" -->
     <!--string name="url_noorders" -->
     <!--string name="url_faq" -->
+    <!--string name="market_whatsapp" -->
+    <!--string name="market_viber" -->
+    <!--string name="market_telegram" -->
 
     <!-- Общие строки-->
     <string name="partner">Официальный партнер</string>
@@ -73,6 +76,9 @@
     <string name="whatsapp">WhatsApp</string>
     <string name="viber">Viber</string>
     <string name="telegram">Telegram</string>
+    <string name="install_whatsapp">Установите приложение WhatsApp</string>
+    <string name="install_viber">Установите приложение Viber</string>
+    <string name="install_telegram">Установите приложение Telegram</string>
 
     <string name="author">Приложение разработал Лавров Сергей</string>
 

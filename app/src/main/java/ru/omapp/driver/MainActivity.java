@@ -3,11 +3,14 @@ package ru.omapp.driver;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.FragmentTransaction;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
+import android.content.pm.ResolveInfo;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -18,8 +21,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 import ru.omapp.driver.fragment.FragmentConditions;
 import ru.omapp.driver.fragment.FragmentContacts;
@@ -28,7 +34,6 @@ import ru.omapp.driver.fragment.FragmentMain;
 import ru.omapp.driver.fragment.FragmentRegistration;
 import ru.omapp.driver.fragment.FragmentSuccess;
 import ru.omapp.driver.mail.ExtendedMail;
-import ru.omapp.driver.mail.SimpleEMail;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -52,7 +57,6 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -126,17 +130,6 @@ public class MainActivity extends AppCompatActivity
             startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.share)));
         }
 
-        /*
-        } else if (id == R.id.nav_send) {
-            Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
-            emailIntent.setType("plain/text");
-            emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL,
-                    new String[] {getResources().getString(R.string.omtaxi_email)});
-            startActivity(Intent.createChooser(emailIntent,getResources().getText(R.string.send)));
-
-        */
-
-
         fTrans.addToBackStack(null);
         fTrans.commit();
         drawer.closeDrawer(GravityCompat.START);
@@ -148,11 +141,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getId();
         fTrans = getFragmentManager().beginTransaction();
 
-        // Main activity
-        if (id == R.id.header) {
-            fTrans.replace(R.id.inc_fragment, fMain);
-
-        } else if (id == R.id.btn_registration) {
+        if (id == R.id.btn_registration) {
             fTrans.replace(R.id.inc_fragment, fRegistration);
 
         } else if (id == R.id.btn_instructions) {
@@ -191,60 +180,61 @@ public class MainActivity extends AppCompatActivity
             String address = getResources().getString(R.string.omtaxi_email);
             String subject = getResources().getString(R.string.email_registration);
             String emailtext = Registration();
-            //SimpleEMail mail = new SimpleEMail(this, address, subject, emailtext);
             ExtendedMail mail = new ExtendedMail(this, address, subject, emailtext);
             fTrans.replace(R.id.inc_fragment, fSuccess);
 
         // Contacts
-            
-        /*
+
         } else if (id == R.id.btn_whatsapp) {
-            Intent whatsappIntent = new Intent(Intent.ACTION_SEND);
-            whatsappIntent.setType("text/plain");
-            whatsappIntent.setPackage("com.whatsapp");
-            whatsappIntent.setData(Uri.parse("tel:" + getResources().getString(R.string.omtaxi_phone)));
-            if (whatsappIntent != null) {
-                whatsappIntent.putExtra(Intent.EXTRA_TEXT, getResources().getString(R.string.app_name));
-                startActivity(Intent.createChooser(whatsappIntent, getResources().getString(R.string.send)));
-            } else {
-                Toast.makeText(item.getContext(), "WhatsApp not Installed", Toast.LENGTH_SHORT).show();
+            Intent whatsappIntent = new Intent(Intent.ACTION_VIEW);
+            whatsappIntent.setData(Uri.parse("whatsapp://send?phone="+getResources().getString(R.string.omtaxi_phone)));
+            try {
+                startActivity(whatsappIntent);
+            }
+            catch (Exception e) {
+                Toast.makeText(this, getResources().getString(R.string.install_whatsapp), Toast.LENGTH_SHORT).show();
+                Uri marketUri = Uri.parse(getResources().getString(R.string.market_whatsapp));
+                Intent marketIntent = new Intent(Intent.ACTION_VIEW, marketUri);
+                startActivity(marketIntent);
             }
 
         } else if (id == R.id.btn_viber) {
-            Intent viberIntent = new Intent("android.intent.action.VIEW");
-            viberIntent.setClassName("com.viber.voip", "com.viber.voip.WelcomeActivity");
-            viberIntent.setData(Uri.parse("tel:" + Uri.encode(getResources().getString(R.string.omtaxi_phone))));
-            viberIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            if (viberIntent != null) {
-                startActivity(Intent.createChooser(viberIntent, getResources().getString(R.string.send)));
-            } else {
-                Toast.makeText(item.getContext(), "Viber not Installed", Toast.LENGTH_SHORT).show();
+            boolean found = false;
+            Intent viberIntent = new Intent(android.content.Intent.ACTION_SEND);
+            viberIntent.setType("text/plain");
+            List<ResolveInfo> resInfo = this.getPackageManager().queryIntentActivities(viberIntent, 0);
+            if (!resInfo.isEmpty()) {
+                for (ResolveInfo info : resInfo) {
+                    if (info.activityInfo.packageName.toLowerCase(Locale.getDefault()).contains("com.viber.voip")
+                            || info.activityInfo.name.toLowerCase(Locale.getDefault()).contains("com.viber.voip")) {
+                        found = true;
+                        viberIntent.setPackage(info.activityInfo.packageName);
+                        viberIntent.setData(Uri.parse("sms:"+getResources().getString(R.string.omtaxi_phone)));
+                        viberIntent.putExtra("address", getResources().getString(R.string.omtaxi_phone));
+                        startActivity(viberIntent);
+                        break;
+                    }
+                }
+                if (!found) {
+                    Toast.makeText(this, getResources().getString(R.string.install_viber), Toast.LENGTH_SHORT).show();
+                    Uri marketUri = Uri.parse(getResources().getString(R.string.market_viber));
+                    Intent marketIntent = new Intent(Intent.ACTION_VIEW, marketUri);
+                    startActivity(marketIntent);
+                }
             }
 
         } else if (id == R.id.btn_telegram) {
-            Intent telegramIntent = new Intent(Intent.ACTION_SEND);
-            telegramIntent.setType("text/plain");
-            telegramIntent.setPackage("org.telegram.messenger");
-            if (telegramIntent != null)
-            {
-                telegramIntent.putExtra(Intent.EXTRA_TEXT, getResources().getString(R.string.app_name));
-                startActivity(Intent.createChooser(telegramIntent, getResources().getString(R.string.send)));
-            }
-            else
-            {
-                Toast.makeText(item.getContext(), "Telegram not Installed", Toast.LENGTH_SHORT).show();
-            }
-
-        } else if (id == R.id.btn_telegram) {
-            try {
             Intent telegramIntent = new Intent(Intent.ACTION_VIEW);
-            telegramIntent.setData(Uri.parse("http://telegram.me/lavsexpert"));
-            startActivity(telegramIntent);
-            } catch (Exception e) {
-                Toast.makeText(item.getContext(), "Telegram not Installed", Toast.LENGTH_SHORT).show();
+            telegramIntent.setData(Uri.parse("tg://resolve?domain="+getResources().getString(R.string.omtaxi_phone)));
+            try {
+                startActivity(telegramIntent);
             }
-
-        */
+            catch (Exception e) {
+                Toast.makeText(this, getResources().getString(R.string.install_telegram), Toast.LENGTH_SHORT).show();
+                Uri marketUri = Uri.parse(getResources().getString(R.string.market_telegram));
+                Intent marketIntent = new Intent(Intent.ACTION_VIEW, marketUri);
+                startActivity(marketIntent);
+            }
 
         } else if (id == R.id.btn_phone) {
             Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
@@ -330,3 +320,4 @@ public class MainActivity extends AppCompatActivity
     };
 
 }
+

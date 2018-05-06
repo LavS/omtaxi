@@ -10,6 +10,9 @@
     <string name="url_firsttrip" translatable="false">https://driver.yandex/урок-№1/</string>
     <string name="url_noorders" translatable="false">https://driver.yandex/block-new/</string>
     <string name="url_faq" translatable="false">https://driver.yandex/новичку/</string>
+    <string name="market_whatsapp" translatable="false">market://details?id=com.whatsapp</string>
+    <string name="market_viber" translatable="false">market://details?id=com.viber.voip</string>
+    <string name="market_telegram" translatable="false">market://details?id=org.telegram.messenger</string>
 
     <!-- Common strings -->
     <string name="partner">Official Partner</string>
@@ -73,6 +76,9 @@
     <string name="whatsapp">WhatsApp</string>
     <string name="viber">Viber</string>
     <string name="telegram">Telegram</string>
+    <string name="install_whatsapp">Install WhatsApp android application</string>
+    <string name="install_viber">Install Viber android application</string>
+    <string name="install_telegram">Install Telegram android application</string>
 
     <string name="author">App developed by Lavrov Sergey</string>
 
