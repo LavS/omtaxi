@@ -17,7 +17,10 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/fio"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:onClick="OnChangeText"
+            android:requiresFadingEdge="horizontal|vertical"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/edt_phone"
@@ -25,7 +28,9 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/phone"
-            android:inputType="phone" />
+            android:inputType="phone"
+            android:onClick="OnChangeText"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/edt_rights"
@@ -33,7 +38,9 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/rights"
-            android:inputType="text" />
+            android:inputType="text"
+            android:onClick="OnChangeText"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,7 +55,9 @@
                 android:ems="10"
                 android:hint="@string/begin_date"
                 android:inputType="date"
-                android:singleLine="true" />
+                android:onClick="OnChangeText"
+                android:singleLine="true"
+                android:textStyle="bold" />
 
             <ImageButton
                 android:id="@+id/btn_begin_date"
@@ -76,7 +85,9 @@
                 android:ems="10"
                 android:hint="@string/end_date"
                 android:inputType="date"
-                android:singleLine="true" />
+                android:onClick="OnChangeText"
+                android:singleLine="true"
+                android:textStyle="bold" />
 
             <ImageButton
                 android:id="@+id/btn_end_date"
@@ -97,7 +108,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/car_brand"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:onClick="OnChangeText" />
 
         <EditText
             android:id="@+id/edt_car_model"
@@ -105,7 +117,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/car_model"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:onClick="OnChangeText" />
 
         <EditText
             android:id="@+id/edt_car_color"
@@ -113,7 +126,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/car_color"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:onClick="OnChangeText" />
 
         <EditText
             android:id="@+id/edt_car_num"
@@ -121,7 +135,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/car_number"
-            android:inputType="text" />
+            android:inputType="text"
+            android:onClick="OnChangeText" />
 
         <EditText
             android:id="@+id/edt_license"
@@ -129,7 +144,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/license"
-            android:inputType="text" />
+            android:inputType="text"
+            android:onClick="OnChangeText" />
 
         <TextView
             android:id="@+id/txtProcessing"
@@ -139,9 +155,10 @@
 
         <Button
             android:id="@+id/btn_begin"
-            android:onClick="OnClick"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:enabled="false"
+            android:onClick="OnClick"
             android:text="@string/begin" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

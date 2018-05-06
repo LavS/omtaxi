@@ -4,12 +4,16 @@
     <!-- Ссылки - только английский -->
     <!--string name="omtaxi_email" -->
     <!--string name="omtaxi_phone" -->
+    <!--string name="omtaxi_name" -->
     <!--string name="omtaxi_share" -->
     <!--string name="url_install" -->
     <!--string name="url_photocontrol" -->
     <!--string name="url_firsttrip" -->
     <!--string name="url_noorders" -->
     <!--string name="url_faq" -->
+    <!--string name="market_whatsapp" -->
+    <!--string name="market_viber" -->
+    <!--string name="market_telegram" -->
 
     <!-- Общие строки-->
     <string name="partner">Официальный партнер</string>
@@ -51,11 +55,11 @@
 
     <!-- Регистрация онлайн -->
     <string name="email_registration">Регистрация</string>
-    <string name="fio">ФИО</string>
-    <string name="phone">Телефон</string>
-    <string name="rights">Серия и номер прав</string>
-    <string name="begin_date">Дата выдачи</string>
-    <string name="end_date">Дата окончания</string>
+    <string name="fio">*ФИО</string>
+    <string name="phone">*Телефон</string>
+    <string name="rights">*Серия и номер прав</string>
+    <string name="begin_date">*Дата выдачи</string>
+    <string name="end_date">*Дата окончания</string>
     <string name="car_brand">Марка авто</string>
     <string name="car_model">Модель авто</string>
     <string name="car_color">Цвет</string>
@@ -66,12 +70,16 @@
     моих персональных данных с целью обеспечения использования сервиса Яндекс.Такси.
     </string>
     <string name="begin">Начать работу</string>
+    <string name="sendmail">Отправка письма...</string>
+    <string name="success">Регистрация прошла успешно.\nВ ближайшие дни с вами свяжутся.</string>
 
     <!-- Контакты -->
     <string name="whatsapp">WhatsApp</string>
     <string name="viber">Viber</string>
     <string name="telegram">Telegram</string>
-    <string name="app_name">OMTaxi</string>
+    <string name="install_whatsapp">Установите приложение WhatsApp</string>
+    <string name="install_viber">Установите приложение Viber</string>
+    <string name="install_telegram">Установите приложение Telegram</string>
 
     <string name="author">Приложение разработал Лавров Сергей</string>
 

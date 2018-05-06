@@ -4,12 +4,16 @@
     <string name="app_name" translatable="false">OM Taxi</string>
     <string name="omtaxi_email" translatable="false">omtaxi@mail.ru</string>
     <string name="omtaxi_phone" translatable="false">+79955015060</string>
+    <string name="omtaxi_name" translatable="false">omtaxi</string>
     <string name="omtaxi_share" translatable="false">https://play.google.com/store/apps/details?id=ru.omapp.driver</string>
     <string name="url_install" translatable="false">https://play.google.com/store/apps/details?id=ru.yandex.taximeter</string>
     <string name="url_photocontrol" translatable="false">https://driver.yandex/photocontrol/</string>
     <string name="url_firsttrip" translatable="false">https://driver.yandex/урок-№1/</string>
     <string name="url_noorders" translatable="false">https://driver.yandex/block-new/</string>
     <string name="url_faq" translatable="false">https://driver.yandex/новичку/</string>
+    <string name="market_whatsapp" translatable="false">market://details?id=com.whatsapp</string>
+    <string name="market_viber" translatable="false">market://details?id=com.viber.voip</string>
+    <string name="market_telegram" translatable="false">market://details?id=org.telegram.messenger</string>
 
     <!-- Common strings -->
     <string name="partner">Official Partner</string>
@@ -51,11 +55,11 @@
 
     <!-- Online registration -->
     <string name="email_registration">Registration</string>
-    <string name="fio">Full name</string>
-    <string name="phone">Phone</string>
-    <string name="rights">Series and number of rights</string>
-    <string name="begin_date">Date of issue of rights</string>
-    <string name="end_date">End date of rights</string>
+    <string name="fio">*Full name</string>
+    <string name="phone">*Phone</string>
+    <string name="rights">*Series and number of rights</string>
+    <string name="begin_date">*Date of issue of rights</string>
+    <string name="end_date">*End date of rights</string>
     <string name="car_brand">Car brand</string>
     <string name="car_model">Car model</string>
     <string name="car_color">Car color</string>
@@ -66,11 +70,16 @@
     of my personal data in order to ensure the use of the Yandex.Taxi service.
     </string>
     <string name="begin">Begin working</string>
+    <string name="sendmail">Send mail...</string>
+    <string name="success">Success.\nWe are call you in few days.</string>
 
     <!-- Contacts -->
     <string name="whatsapp">WhatsApp</string>
     <string name="viber">Viber</string>
     <string name="telegram">Telegram</string>
+    <string name="install_whatsapp">Install WhatsApp android application</string>
+    <string name="install_viber">Install Viber android application</string>
+    <string name="install_telegram">Install Telegram android application</string>
 
     <string name="author">App developed by Lavrov Sergey</string>
 
