@@ -1,10 +1,12 @@
-package ru.omtaxi.omtaxi;
+package ru.omapp.driver.fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import ru.omapp.driver.R;
 
 public class FragmentInstructions extends Fragment {
 

@@ -1,8 +1,9 @@
-package ru.omtaxi.omtaxi;
+package ru.omapp.driver;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
@@ -15,20 +16,32 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.Date;
 
+import ru.omapp.driver.fragment.FragmentConditions;
+import ru.omapp.driver.fragment.FragmentContacts;
+import ru.omapp.driver.fragment.FragmentInstructions;
+import ru.omapp.driver.fragment.FragmentMain;
+import ru.omapp.driver.fragment.FragmentRegistration;
+import ru.omapp.driver.fragment.FragmentSuccess;
+import ru.omapp.driver.mail.ExtendedMail;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    Context mainContext;
 
     FragmentMain fMain;
     FragmentConditions fConditions;
     FragmentContacts fContacts;
     FragmentInstructions fInstructions;
     FragmentRegistration fRegistration;
+    FragmentSuccess fSuccess;
     FragmentTransaction fTrans;
 
     Date date;
@@ -60,6 +73,7 @@ public class MainActivity extends AppCompatActivity
         fContacts = new FragmentContacts();
         fInstructions = new FragmentInstructions();
         fRegistration = new FragmentRegistration();
+        fSuccess = new FragmentSuccess();
 
         fTrans = getFragmentManager().beginTransaction();
         fTrans.add(R.id.inc_fragment, fMain);
@@ -70,6 +84,9 @@ public class MainActivity extends AppCompatActivity
         myMonth = date.getMonth() + 1;
         myDay = date.getDay();
 
+        setTitle(R.string.menu);
+
+        mainContext = this;
     }
 
     @Override
@@ -110,17 +127,6 @@ public class MainActivity extends AppCompatActivity
             startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.share)));
         }
 
-        /*
-        } else if (id == R.id.nav_send) {
-            Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
-            emailIntent.setType("plain/text");
-            emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL,
-                    new String[] {getResources().getString(R.string.omtaxi_email)});
-            startActivity(Intent.createChooser(emailIntent,getResources().getText(R.string.send)));
-
-        */
-
-
         fTrans.addToBackStack(null);
         fTrans.commit();
         drawer.closeDrawer(GravityCompat.START);
@@ -132,12 +138,11 @@ public class MainActivity extends AppCompatActivity
         int id = item.getId();
         fTrans = getFragmentManager().beginTransaction();
 
-        // Main activity
         if (id == R.id.btn_registration) {
             fTrans.replace(R.id.inc_fragment, fRegistration);
 
         } else if (id == R.id.btn_instructions) {
-            fTrans.replace(R.id.inc_fragment, fInstructions);
+        fTrans.replace(R.id.inc_fragment, fInstructions);
 
         } else if (id == R.id.btn_conditions) {
             fTrans.replace(R.id.inc_fragment, fConditions);
@@ -168,63 +173,59 @@ public class MainActivity extends AppCompatActivity
 
         // Registration
         } else if (id == R.id.btn_begin) {
-            Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
-            emailIntent.setType("plain/text");
-            emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[] {getResources().getString(R.string.omtaxi_email)});
-            emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getResources().getString(R.string.email_registration));
-            emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, Registration());
-            startActivity(Intent.createChooser(emailIntent,getResources().getText(R.string.send)));
+
+            String address = getResources().getString(R.string.omtaxi_email);
+            String subject = getResources().getString(R.string.email_registration);
+            String emailtext = Registration();
+            ExtendedMail mail = new ExtendedMail(this, address, subject, emailtext);
+            fTrans.replace(R.id.inc_fragment, fSuccess);
+
 
         // Contacts
-            
-        /*
+
         } else if (id == R.id.btn_whatsapp) {
-            Intent whatsappIntent = new Intent(Intent.ACTION_SEND);
-            whatsappIntent.setType("text/plain");
-            whatsappIntent.setPackage("com.whatsapp");
-            whatsappIntent.setData(Uri.parse("tel:" + getResources().getString(R.string.omtaxi_phone)));
-            if (whatsappIntent != null) {
-                whatsappIntent.putExtra(Intent.EXTRA_TEXT, getResources().getString(R.string.app_name));
-                startActivity(Intent.createChooser(whatsappIntent, getResources().getString(R.string.send)));
-            } else {
-                Toast.makeText(item.getContext(), "WhatsApp not Installed", Toast.LENGTH_SHORT).show();
+            Intent whatsappIntent = new Intent(Intent.ACTION_VIEW);
+            whatsappIntent.setData(Uri.parse("whatsapp://send?phone="+getResources().getString(R.string.omtaxi_phone)));
+            try {
+                startActivity(whatsappIntent);
+            }
+            catch (Exception e) {
+                Toast.makeText(this, getResources().getString(R.string.install_whatsapp), Toast.LENGTH_SHORT).show();
+                Uri marketUri = Uri.parse(getResources().getString(R.string.market_whatsapp));
+                Intent marketIntent = new Intent(Intent.ACTION_VIEW, marketUri);
+                startActivity(marketIntent);
             }
 
         } else if (id == R.id.btn_viber) {
-            Intent viberIntent = new Intent("android.intent.action.VIEW");
-            viberIntent.setClassName("com.viber.voip", "com.viber.voip.WelcomeActivity");
-            viberIntent.setData(Uri.parse("tel:" + Uri.encode(getResources().getString(R.string.omtaxi_phone))));
-            viberIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            if (viberIntent != null) {
-                startActivity(Intent.createChooser(viberIntent, getResources().getString(R.string.send)));
-            } else {
-                Toast.makeText(item.getContext(), "Viber not Installed", Toast.LENGTH_SHORT).show();
-            }
 
-        } else if (id == R.id.btn_telegram) {
-            Intent telegramIntent = new Intent(Intent.ACTION_SEND);
-            telegramIntent.setType("text/plain");
-            telegramIntent.setPackage("org.telegram.messenger");
-            if (telegramIntent != null)
-            {
-                telegramIntent.putExtra(Intent.EXTRA_TEXT, getResources().getString(R.string.app_name));
-                startActivity(Intent.createChooser(telegramIntent, getResources().getString(R.string.send)));
-            }
-            else
-            {
-                Toast.makeText(item.getContext(), "Telegram not Installed", Toast.LENGTH_SHORT).show();
-            }
-
-        } else if (id == R.id.btn_telegram) {
+            String sphone = getResources().getString(R.string.omtaxi_phone);
+            Uri uri = Uri.parse("tel:" + Uri.encode(sphone));
+            Intent intent = new Intent("android.intent.action.VIEW");
+            intent.setClassName("com.viber.voip", "com.viber.voip.WelcomeActivity");
+            intent.setData(uri);
+            startActivity(intent);
             try {
-            Intent telegramIntent = new Intent(Intent.ACTION_VIEW);
-            telegramIntent.setData(Uri.parse("http://telegram.me/lavsexpert"));
-            startActivity(telegramIntent);
-            } catch (Exception e) {
-                Toast.makeText(item.getContext(), "Telegram not Installed", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+            catch (Exception e) {
+                Toast.makeText(this, getResources().getString(R.string.install_viber), Toast.LENGTH_SHORT).show();
+                Uri marketUri = Uri.parse(getResources().getString(R.string.market_viber));
+                Intent marketIntent = new Intent(Intent.ACTION_VIEW, marketUri);
+                startActivity(marketIntent);
             }
 
-        */
+         } else if (id == R.id.btn_telegram) {
+            Intent telegramIntent = new Intent(Intent.ACTION_VIEW);
+            telegramIntent.setData(Uri.parse("tg://resolve?domain="+getResources().getString(R.string.omtaxi_name)));
+            try {
+                startActivity(telegramIntent);
+            }
+            catch (Exception e) {
+                Toast.makeText(this, getResources().getString(R.string.install_telegram), Toast.LENGTH_SHORT).show();
+                Uri marketUri = Uri.parse(getResources().getString(R.string.market_telegram));
+                Intent marketIntent = new Intent(Intent.ACTION_VIEW, marketUri);
+                startActivity(marketIntent);
+            }
 
         } else if (id == R.id.btn_phone) {
             Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
@@ -244,8 +245,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    public String Registration()
-    {
+    public String Registration(){
         String send;
         send = getResources().getString(R.string.fio) + ": "
                 + ((EditText) findViewById(R.id.edt_fio)).getText().toString();
@@ -309,4 +309,18 @@ public class MainActivity extends AppCompatActivity
         }
     };
 
+    public void OnChangeText(View item){
+        boolean isEmpty = ((EditText) findViewById(R.id.edt_fio)).getText().toString().trim().equals("")
+                || ((EditText) findViewById(R.id.edt_phone)).getText().toString().trim().equals("")
+                || ((EditText) findViewById(R.id.edt_rights)).getText().toString().trim().equals("")
+                || ((EditText) findViewById(R.id.edt_begin_date)).getText().toString().trim().equals("")
+                || ((EditText) findViewById(R.id.edt_end_date)).getText().toString().trim().equals("");
+        ((Button) findViewById(R.id.btn_begin)).setEnabled(!isEmpty);
+
+        //Toast.makeText(this, "Текст:"+((EditText) item).getText().toString()
+        //        + " - " +Boolean.toString(!isEmpty), Toast.LENGTH_SHORT).show();
+    }
+
+
 }
+

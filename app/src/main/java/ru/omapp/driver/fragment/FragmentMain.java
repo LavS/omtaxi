@@ -1,4 +1,4 @@
-package ru.omtaxi.omtaxi;
+package ru.omapp.driver.fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -6,10 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class FragmentContacts extends Fragment {
+import ru.omapp.driver.R;
+
+public class FragmentMain extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_contacts, null);
+        return inflater.inflate(R.layout.fragment_main, null);
     }
 }

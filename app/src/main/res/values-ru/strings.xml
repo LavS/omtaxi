@@ -1,18 +1,23 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <!--string name="app_name" -->
     <!-- Ссылки - только английский -->
     <!--string name="omtaxi_email" -->
     <!--string name="omtaxi_phone" -->
+    <!--string name="omtaxi_name" -->
     <!--string name="omtaxi_share" -->
     <!--string name="url_install" -->
     <!--string name="url_photocontrol" -->
     <!--string name="url_firsttrip" -->
     <!--string name="url_noorders" -->
     <!--string name="url_faq" -->
+    <!--string name="market_whatsapp" -->
+    <!--string name="market_viber" -->
+    <!--string name="market_telegram" -->
 
     <!-- Общие строки-->
     <string name="partner">Официальный партнер</string>
+    <string name="menu">Меню</string>>
 
     <!-- Боковое меню -->
     <string name="registration">Подключение онлайн</string>
@@ -32,15 +37,15 @@
 
     <!-- Условия работы -->
     <string name="text_conditions">
+    Условия:\n
+    » Подключение вашего автомобиля бесплатно в день обращения\n
+    » Вы выбираете самостоятельно как вам удобно сотрудничать с нами: % или абонентская плата.\n
+    » Оформим лицензию такси для Москвы и Московской области (для белых и желтых автомобилей, срок от 2 дней)\n
+    » Вывод средств по заявке в день обращения или раз в неделю по средам\n
+   \n
     Доход:\n
     » от 5000-6000 руб в день на тарифах ЭКОНОМ\n
     » от 6000-7000 руб в день на тарифах КОМФОРТ\n
-    \n
-    Условия:\n
-    » Подключение вашего автомобиля бесплатно в день обращения\n
-    » Помощь с оклейкой машины в белый или желтый цвет\n
-    » Оформим лицензию такси (от 2 дней)\n
-    » Выплата заработанных денег четко раз в неделю по средам\n
     \n
     Бонусы:\n
     » Повышающий коэффициент во время высокого спроса (стабильно утром/вечером/в выходные/в дождь)\n
@@ -50,27 +55,32 @@
 
     <!-- Регистрация онлайн -->
     <string name="email_registration">Регистрация</string>
-    <string name="fio">ФИО</string>
-    <string name="phone">Телефон</string>
-    <string name="rights">Серия и номер прав</string>
-    <string name="begin_date">Дата выдачи</string>
-    <string name="end_date">Дата окончания</string>
+    <string name="fio">*ФИО</string>
+    <string name="phone">*Телефон</string>
+    <string name="rights">*Серия и номер прав</string>
+    <string name="begin_date">*Дата выдачи</string>
+    <string name="end_date">*Дата окончания</string>
     <string name="car_brand">Марка авто</string>
     <string name="car_model">Модель авто</string>
     <string name="car_color">Цвет</string>
     <string name="car_number">Гос номер</string>
     <string name="license">Серия и номер лицензии</string>
     <string name="processing">
-    Нажимая на кнопку "Начать работу" я даю согласие на обработку и передачу моих персональных данных
-    третьим лицам с целью обеспечения использования сервиса Яндекс.Такси в качестве водителя службы такси,
-    а также для совершение действий, предусмотренных в Договоре.
+    Нажимая на кнопку "Начать работу" я даю согласие на обработку и передачу
+    моих персональных данных с целью обеспечения использования сервиса Яндекс.Такси.
     </string>
     <string name="begin">Начать работу</string>
+    <string name="sendmail">Отправка письма...</string>
+    <string name="success">Регистрация прошла успешно.\nВ ближайшие дни с вами свяжутся.</string>
 
     <!-- Контакты -->
     <string name="whatsapp">WhatsApp</string>
     <string name="viber">Viber</string>
     <string name="telegram">Telegram</string>
-    <string name="app_name">OMTaxi</string>
+    <string name="install_whatsapp">Установите приложение WhatsApp</string>
+    <string name="install_viber">Установите приложение Viber</string>
+    <string name="install_telegram">Установите приложение Telegram</string>
+
+    <string name="author">Приложение разработал Лавров Сергей</string>
 
 </resources>
