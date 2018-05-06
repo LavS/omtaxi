@@ -3,14 +3,12 @@ package ru.omapp.driver;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.FragmentTransaction;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.ResolveInfo;
-import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -57,6 +55,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -199,33 +198,26 @@ public class MainActivity extends AppCompatActivity
             }
 
         } else if (id == R.id.btn_viber) {
-            boolean found = false;
-            Intent viberIntent = new Intent(android.content.Intent.ACTION_SEND);
-            viberIntent.setType("text/plain");
-            List<ResolveInfo> resInfo = this.getPackageManager().queryIntentActivities(viberIntent, 0);
-            if (!resInfo.isEmpty()) {
-                for (ResolveInfo info : resInfo) {
-                    if (info.activityInfo.packageName.toLowerCase(Locale.getDefault()).contains("com.viber.voip")
-                            || info.activityInfo.name.toLowerCase(Locale.getDefault()).contains("com.viber.voip")) {
-                        found = true;
-                        viberIntent.setPackage(info.activityInfo.packageName);
-                        viberIntent.setData(Uri.parse("sms:"+getResources().getString(R.string.omtaxi_phone)));
-                        viberIntent.putExtra("address", getResources().getString(R.string.omtaxi_phone));
-                        startActivity(viberIntent);
-                        break;
-                    }
-                }
-                if (!found) {
-                    Toast.makeText(this, getResources().getString(R.string.install_viber), Toast.LENGTH_SHORT).show();
-                    Uri marketUri = Uri.parse(getResources().getString(R.string.market_viber));
-                    Intent marketIntent = new Intent(Intent.ACTION_VIEW, marketUri);
-                    startActivity(marketIntent);
-                }
+
+            String sphone = getResources().getString(R.string.omtaxi_phone);
+            Uri uri = Uri.parse("tel:" + Uri.encode(sphone));
+            Intent intent = new Intent("android.intent.action.VIEW");
+            intent.setClassName("com.viber.voip", "com.viber.voip.WelcomeActivity");
+            intent.setData(uri);
+            startActivity(intent);
+            try {
+                startActivity(intent);
+            }
+            catch (Exception e) {
+                Toast.makeText(this, getResources().getString(R.string.install_viber), Toast.LENGTH_SHORT).show();
+                Uri marketUri = Uri.parse(getResources().getString(R.string.market_viber));
+                Intent marketIntent = new Intent(Intent.ACTION_VIEW, marketUri);
+                startActivity(marketIntent);
             }
 
-        } else if (id == R.id.btn_telegram) {
+         } else if (id == R.id.btn_telegram) {
             Intent telegramIntent = new Intent(Intent.ACTION_VIEW);
-            telegramIntent.setData(Uri.parse("tg://resolve?domain="+getResources().getString(R.string.omtaxi_phone)));
+            telegramIntent.setData(Uri.parse("tg://resolve?domain="+getResources().getString(R.string.omtaxi_name)));
             try {
                 startActivity(telegramIntent);
             }
