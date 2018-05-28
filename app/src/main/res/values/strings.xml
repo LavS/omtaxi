@@ -1,8 +1,10 @@
 <resources>
 
-    <!-- URLs - only english -->
+    <!-- URLs - only English -->
+    <string name="version" translatable="false">version 1.1.39</string>
     <string name="app_name" translatable="false">OM Taxi</string>
     <string name="omtaxi_email" translatable="false">omtaxi@mail.ru</string>
+    <string name="omtaxi_site" translatable="false">omtaxi.ru</string>
     <string name="omtaxi_phone" translatable="false">+79955015060</string>
     <string name="omtaxi_name" translatable="false">omtaxi</string>
     <string name="omtaxi_share" translatable="false">https://play.google.com/store/apps/details?id=ru.omapp.driver</string>
@@ -14,7 +16,6 @@
     <string name="market_whatsapp" translatable="false">market://details?id=com.whatsapp</string>
     <string name="market_viber" translatable="false">market://details?id=com.viber.voip</string>
     <string name="market_telegram" translatable="false">market://details?id=org.telegram.messenger</string>
-
     <!-- Common strings -->
     <string name="partner">Official Partner</string>
     <string name="menu">Menu</string>>
@@ -55,6 +56,7 @@
 
     <!-- Online registration -->
     <string name="email_registration">Registration</string>
+    <string name="town">Your town/city</string>
     <string name="fio">*Full name</string>
     <string name="phone">*Phone</string>
     <string name="rights">*Series and number of rights</string>
@@ -63,6 +65,7 @@
     <string name="car_brand">Car brand</string>
     <string name="car_model">Car model</string>
     <string name="car_color">Car color</string>
+    <string name="car_date">Year of manufacture</string>
     <string-array name="car_colors">
         <item>Beige</item>
         <item>White</item>
@@ -80,6 +83,7 @@
     </string-array>
     <string name="car_number">State number</string>
     <string name="license">License number and serial number</string>
+    <string name="promo_code">Promo-code (if it exists)</string>
     <string name="processing">
     When I push button "Begin working" I hereby consent to the processing and transfer
     of my personal data in order to ensure the use of the Yandex.Taxi service.
@@ -95,7 +99,6 @@
     <string name="install_whatsapp">Install WhatsApp android application</string>
     <string name="install_viber">Install Viber android application</string>
     <string name="install_telegram">Install Telegram android application</string>
-
     <string name="author">App developed by Lavrov Sergey</string>
 
 </resources>

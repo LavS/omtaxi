@@ -248,7 +248,10 @@ public class MainActivity extends AppCompatActivity
 
     public String Registration(){
         String send;
-        send = getResources().getString(R.string.fio) + ": "
+        send = getResources().getString(R.string.town) + ": "
+                + ((EditText) findViewById(R.id.edt_town)).getText().toString();
+
+        send = send + "\n" + getResources().getString(R.string.fio) + ": "
                 + ((EditText) findViewById(R.id.edt_fio)).getText().toString();
 
         send = send + "\n" + getResources().getString(R.string.phone) + ": "
@@ -269,6 +272,9 @@ public class MainActivity extends AppCompatActivity
         send = send + "\n" + getResources().getString(R.string.car_model) + ": "
                 + ((EditText) findViewById(R.id.edt_car_model)).getText().toString();
 
+        send = send + "\n" + getResources().getString(R.string.car_date) + ": "
+                + ((EditText) findViewById(R.id.edt_car_date)).getText().toString();
+
         send = send + "\n" + getResources().getString(R.string.car_color) + ": "
                 + ((EditText) findViewById(R.id.edt_car_color)).getText().toString();
 
@@ -277,6 +283,9 @@ public class MainActivity extends AppCompatActivity
 
         send = send + "\n" + getResources().getString(R.string.license) + ": "
                 + ((EditText) findViewById(R.id.edt_license)).getText().toString();
+
+        send = send + "\n" + getResources().getString(R.string.promo_code) + ": "
+                + ((EditText) findViewById(R.id.edt_promo_code)).getText().toString();
 
         send = send + "\n" + getResources().getString(R.string.processing);
 

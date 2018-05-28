@@ -13,8 +13,8 @@ android {
         minSdkVersion 15
         targetSdkVersion 26
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        versionCode 38
-        versionName '1.1.38'
+        versionCode 39
+        versionName '1.1.39'
     }
     buildTypes {
         release {
