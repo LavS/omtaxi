@@ -27,6 +27,14 @@
         app:srcCompat="@drawable/ic_taxi" />
 
     <TextView
+        android:id="@+id/txt_version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/version"
+        android:textColor="@android:color/background_dark"
+        android:textSize="8sp" />
+
+    <TextView
         android:id="@+id/txt_app_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,10 +44,10 @@
         android:textColor="@android:color/background_dark" />
 
     <TextView
-        android:id="@+id/txt_email"
+        android:id="@+id/txt_site"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/omtaxi_email"
+        android:text="@string/omtaxi_site"
         android:textColor="@android:color/background_dark" />
 
 </LinearLayout>

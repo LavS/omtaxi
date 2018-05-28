@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/lt_form"
+        android:id="@+id/ll_form"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edt_town"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/town"
+            android:inputType="textPersonName"
+            android:onClick="OnChangeText"
+            android:requiresFadingEdge="horizontal|vertical" />
 
         <EditText
             android:id="@+id/edt_fio"
@@ -43,6 +53,7 @@
             android:textStyle="bold" />
 
         <LinearLayout
+            android:id="@+id/ll_begin_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -73,6 +84,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_end_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -126,7 +138,16 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/car_color"
-            android:inputType="textPersonName"
+            android:inputType="text"
+            android:onClick="OnChangeText" />
+
+        <EditText
+            android:id="@+id/edt_car_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/car_date"
+            android:inputType="number"
             android:onClick="OnChangeText" />
 
         <EditText
@@ -144,6 +165,15 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/license"
+            android:inputType="text"
+            android:onClick="OnChangeText" />
+
+        <EditText
+            android:id="@+id/edt_promo_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/promo_code"
             android:inputType="text"
             android:onClick="OnChangeText" />
 

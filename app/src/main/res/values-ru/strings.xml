@@ -1,8 +1,10 @@
 <resources>
 
-    <!--string name="app_name" -->
     <!-- Ссылки - только английский -->
+    <!--string name="version" -->
+    <!--string name="app_name" -->
     <!--string name="omtaxi_email" -->
+    <!--string name="omtaxi_site" -->
     <!--string name="omtaxi_phone" -->
     <!--string name="omtaxi_name" -->
     <!--string name="omtaxi_share" -->
@@ -21,7 +23,7 @@
 
     <!-- Боковое меню -->
     <string name="registration">Подключение онлайн</string>
-    <string name="instructions">Полезные интрукции</string>
+    <string name="instructions">Полезные инcтрукции</string>
     <string name="conditions">Условия работы</string>
     <string name="contacts">Контакты</string>
     <string name="communicate">Общение</string>
@@ -44,8 +46,8 @@
     » Вывод средств по заявке в день обращения или раз в неделю по средам\n
    \n
     Доход:\n
-    » от 5000-6000 руб в день на тарифах ЭКОНОМ\n
-    » от 6000-7000 руб в день на тарифах КОМФОРТ\n
+    » от 5000-6000 руб. в день на тарифах ЭКОНОМ\n
+    » от 6000-7000 руб. в день на тарифах КОМФОРТ\n
     \n
     Бонусы:\n
     » Повышающий коэффициент во время высокого спроса (стабильно утром/вечером/в выходные/в дождь)\n
@@ -55,6 +57,7 @@
 
     <!-- Регистрация онлайн -->
     <string name="email_registration">Регистрация</string>
+    <string name="town">Ваш город</string>
     <string name="fio">*ФИО</string>
     <string name="phone">*Телефон</string>
     <string name="rights">*Серия и номер прав</string>
@@ -63,8 +66,25 @@
     <string name="car_brand">Марка авто</string>
     <string name="car_model">Модель авто</string>
     <string name="car_color">Цвет</string>
-    <string name="car_number">Гос номер</string>
+    <string-array name="car_colors">
+        <item>Бежевый</item>
+        <item>Белый</item>
+        <item>Голубой</item>
+        <item>Желтый</item>
+        <item>Зеленый</item>
+        <item>Коричневый</item>
+        <item>Красный</item>
+        <item>Оранжевый</item>
+        <item>Розовый</item>
+        <item>Серый</item>
+        <item>Синий</item>
+        <item>Фиолетовый</item>
+        <item>Черный</item>
+    </string-array>
+    <string name="car_number">Гос. номер</string>
+    <string name="car_date">Год выпуска</string>
     <string name="license">Серия и номер лицензии</string>
+    <string name="promo_code">Промо-код (если есть)</string>
     <string name="processing">
     Нажимая на кнопку "Начать работу" я даю согласие на обработку и передачу
     моих персональных данных с целью обеспечения использования сервиса Яндекс.Такси.
@@ -80,7 +100,6 @@
     <string name="install_whatsapp">Установите приложение WhatsApp</string>
     <string name="install_viber">Установите приложение Viber</string>
     <string name="install_telegram">Установите приложение Telegram</string>
-
     <string name="author">Приложение разработал Лавров Сергей</string>
 
 </resources>
