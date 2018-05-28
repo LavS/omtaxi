@@ -63,6 +63,21 @@
     <string name="car_brand">Car brand</string>
     <string name="car_model">Car model</string>
     <string name="car_color">Car color</string>
+    <string-array name="car_colors">
+        <item>Beige</item>
+        <item>White</item>
+        <item>Blue</item>
+        <item>Yellow</item>
+        <item>Green</item>
+        <item>Brown</item>
+        <item>Red</item>
+        <item>Orange</item>
+        <item>Pink</item>
+        <item>Gray</item>
+        <item>Blue</item>
+        <item>Purple</item>
+        <item>Black</item>
+    </string-array>
     <string name="car_number">State number</string>
     <string name="license">License number and serial number</string>
     <string name="processing">

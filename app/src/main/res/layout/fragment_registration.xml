@@ -126,7 +126,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/car_color"
-            android:inputType="textPersonName"
+            android:inputType="text"
             android:onClick="OnChangeText" />
 
         <EditText

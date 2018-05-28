@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity
         setTitle(R.string.menu);
 
         mainContext = this;
+
     }
 
     @Override
@@ -316,11 +317,7 @@ public class MainActivity extends AppCompatActivity
                 || ((EditText) findViewById(R.id.edt_begin_date)).getText().toString().trim().equals("")
                 || ((EditText) findViewById(R.id.edt_end_date)).getText().toString().trim().equals("");
         ((Button) findViewById(R.id.btn_begin)).setEnabled(!isEmpty);
-
-        //Toast.makeText(this, "Текст:"+((EditText) item).getText().toString()
-        //        + " - " +Boolean.toString(!isEmpty), Toast.LENGTH_SHORT).show();
     }
-
 
 }
 

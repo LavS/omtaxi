@@ -63,6 +63,21 @@
     <string name="car_brand">Марка авто</string>
     <string name="car_model">Модель авто</string>
     <string name="car_color">Цвет</string>
+    <string-array name="car_colors">
+        <item>Бежевый</item>
+        <item>Белый</item>
+        <item>Голубой</item>
+        <item>Желтый</item>
+        <item>Зеленый</item>
+        <item>Коричневый</item>
+        <item>Красный</item>
+        <item>Оранжевый</item>
+        <item>Розовый</item>
+        <item>Серый</item>
+        <item>Синий</item>
+        <item>Фиолетовый</item>
+        <item>Черный</item>
+    </string-array>
     <string name="car_number">Гос номер</string>
     <string name="license">Серия и номер лицензии</string>
     <string name="processing">
