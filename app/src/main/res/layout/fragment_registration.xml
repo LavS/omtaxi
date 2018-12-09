@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/cl_main"
+    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/cl_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -19,7 +19,8 @@
             android:hint="@string/town"
             android:inputType="textPersonName"
             android:onClick="OnChangeText"
-            android:requiresFadingEdge="horizontal|vertical" />
+            android:requiresFadingEdge="horizontal|vertical"
+            android:autofillHints="" tools:targetApi="o"/>
 
         <EditText
             android:id="@+id/edt_fio"
@@ -30,7 +31,8 @@
             android:inputType="textPersonName"
             android:onClick="OnChangeText"
             android:requiresFadingEdge="horizontal|vertical"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:autofillHints="" tools:targetApi="o"/>
 
         <EditText
             android:id="@+id/edt_phone"
@@ -40,7 +42,8 @@
             android:hint="@string/phone"
             android:inputType="phone"
             android:onClick="OnChangeText"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:autofillHints="" tools:targetApi="o"/>
 
         <EditText
             android:id="@+id/edt_rights"
@@ -50,7 +53,8 @@
             android:hint="@string/rights"
             android:inputType="text"
             android:onClick="OnChangeText"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:autofillHints="" tools:targetApi="o"/>
 
         <LinearLayout
             android:id="@+id/ll_begin_date"
@@ -68,7 +72,8 @@
                 android:inputType="date"
                 android:onClick="OnChangeText"
                 android:singleLine="true"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:autofillHints="" tools:targetApi="o"/>
 
             <ImageButton
                 android:id="@+id/btn_begin_date"
@@ -99,7 +104,8 @@
                 android:inputType="date"
                 android:onClick="OnChangeText"
                 android:singleLine="true"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:autofillHints="" tools:targetApi="o"/>
 
             <ImageButton
                 android:id="@+id/btn_end_date"
@@ -121,7 +127,8 @@
             android:ems="10"
             android:hint="@string/car_brand"
             android:inputType="textPersonName"
-            android:onClick="OnChangeText" />
+            android:onClick="OnChangeText"
+            android:autofillHints="" tools:targetApi="o"/>
 
         <EditText
             android:id="@+id/edt_car_model"
@@ -130,7 +137,8 @@
             android:ems="10"
             android:hint="@string/car_model"
             android:inputType="textPersonName"
-            android:onClick="OnChangeText" />
+            android:onClick="OnChangeText"
+            android:autofillHints="" tools:targetApi="o"/>
 
         <EditText
             android:id="@+id/edt_car_color"
@@ -139,16 +147,18 @@
             android:ems="10"
             android:hint="@string/car_color"
             android:inputType="text"
-            android:onClick="OnChangeText" />
+            android:onClick="OnChangeText"
+            android:autofillHints="" tools:targetApi="o"/>
 
         <EditText
             android:id="@+id/edt_car_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/car_date"
-            android:inputType="number"
-            android:onClick="OnChangeText" />
+            android:inputType="number|date"
+            android:onClick="OnChangeText" tools:targetApi="o"/>
 
         <EditText
             android:id="@+id/edt_car_num"
@@ -157,7 +167,8 @@
             android:ems="10"
             android:hint="@string/car_number"
             android:inputType="text"
-            android:onClick="OnChangeText" />
+            android:onClick="OnChangeText"
+            android:autofillHints="" tools:targetApi="o"/>
 
         <EditText
             android:id="@+id/edt_license"
@@ -166,7 +177,8 @@
             android:ems="10"
             android:hint="@string/license"
             android:inputType="text"
-            android:onClick="OnChangeText" />
+            android:onClick="OnChangeText"
+            android:autofillHints="" tools:targetApi="o"/>
 
         <EditText
             android:id="@+id/edt_promo_code"
@@ -175,7 +187,8 @@
             android:ems="10"
             android:hint="@string/promo_code"
             android:inputType="text"
-            android:onClick="OnChangeText" />
+            android:onClick="OnChangeText"
+            android:autofillHints="" tools:targetApi="o"/>
 
         <TextView
             android:id="@+id/txtProcessing"
